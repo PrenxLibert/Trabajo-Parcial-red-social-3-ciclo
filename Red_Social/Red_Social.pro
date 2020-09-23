@@ -13,7 +13,9 @@ SOURCES += \
     baseredsocial.cpp
 
 HEADERS += \
-    baseredsocial.h
+    baseredsocial.h \
+    lista.h \
+    usuario.h
 
 FORMS += \
     baseredsocial.ui
