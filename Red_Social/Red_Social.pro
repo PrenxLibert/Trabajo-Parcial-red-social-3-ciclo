@@ -18,7 +18,8 @@ HEADERS += \
     usuario.h
 
 FORMS += \
-    baseredsocial.ui
+    baseredsocial.ui \
+    red_social.ui
 
 TRANSLATIONS += \
     Red_Social_es_419.ts
