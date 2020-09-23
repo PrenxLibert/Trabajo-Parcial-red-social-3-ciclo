@@ -27,8 +27,5 @@ void baseredsocial::on_btnRegister_clicked()
 
 void baseredsocial::on_btnLogin_clicked()
 {
-    /*if()
-    {
 
-    }*/
 }
