@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    baseredsocial.cpp
+    baseredsocial.cpp \
+    red_social.cpp
 
 HEADERS += \
     baseredsocial.h \
     lista.h \
+    red_social.h \
     usuario.h
 
 FORMS += \
