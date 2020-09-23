@@ -1,0 +1,25 @@
+#ifndef USUARIO_H
+#define USUARIO_H
+#include <iostream>
+#include "ui_baseredsocial.h"
+
+using namespace std;
+
+struct Usuario{
+
+    QString nombre;
+    QString apellido;
+    QString usuario;
+    QString contrasena;
+    int numero;
+
+    Usuario(QString name,string a, string u, string c, int n){
+        nombre=name;
+        apellido=a;
+        usuario=u;
+        contrasena=c;
+        numero=n;
+    }
+};
+
+#endif // USUARIO_H
