@@ -11,14 +11,17 @@ QT_END_NAMESPACE
 class baseredsocial : public QMainWindow
 {
     Q_OBJECT
-
+    Usuario* usr1;
 
 public:
     baseredsocial(QWidget *parent = nullptr);
     ~baseredsocial();
 
 private slots:
-
+    
+    void on_btnRegister_clicked();
+    
+    void on_btnLogin_clicked();
 
 private:
     Ui::baseredsocial *ui;
