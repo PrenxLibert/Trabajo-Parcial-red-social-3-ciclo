@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "usuario.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class baseredsocial; }
 QT_END_NAMESPACE
@@ -18,7 +17,7 @@ public:
     ~baseredsocial();
 
 private slots:
-
+    void on_pushButton_clicked();
 
 private:
     Ui::baseredsocial *ui;

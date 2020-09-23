@@ -27,7 +27,7 @@
      <string>Usuario</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxUsrLog">
+   <widget class="QLineEdit" name="tbxUsername">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -50,7 +50,7 @@
      <string>Contraseña</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxContrasena">
+   <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -60,7 +60,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnLogin">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
       <x>680</x>
@@ -99,7 +99,7 @@
      <string>Nombre :</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxName">
+   <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -122,7 +122,7 @@
      <string>Apellidos :</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxLastname">
+   <widget class="QLineEdit" name="lineEdit_4">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -145,7 +145,7 @@
      <string>Telefono :</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxPhone">
+   <widget class="QLineEdit" name="lineEdit_5">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -184,17 +184,17 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>310</x>
       <y>350</y>
-      <width>111</width>
+      <width>61</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Confirmar contraseña :</string>
+     <string>Contraceña :</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxUsrReg">
+   <widget class="QLineEdit" name="lineEdit_6">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -204,7 +204,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxPasswordIn">
+   <widget class="QLineEdit" name="lineEdit_7">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -214,7 +214,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tbxPasswordCon">
+   <widget class="QLineEdit" name="lineEdit_8">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -224,7 +224,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnRegister">
+   <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
       <x>390</x>
