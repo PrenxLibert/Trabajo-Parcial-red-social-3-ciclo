@@ -15,10 +15,3 @@ baseredsocial::~baseredsocial()
 {
     delete ui;
 }
-
-
-void baseredsocial::on_pushButton_clicked()
-{
-    QString nombre = ui->tbxUsername->text();
-    ui->lineEdit_2->setText(nombre);
-}
