@@ -52,7 +52,7 @@ public:
     {
         if (baseredsocial->objectName().isEmpty())
             baseredsocial->setObjectName(QString::fromUtf8("baseredsocial"));
-        baseredsocial->resize(800, 534);
+        baseredsocial->resize(800, 475);
         centralwidget = new QWidget(baseredsocial);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);

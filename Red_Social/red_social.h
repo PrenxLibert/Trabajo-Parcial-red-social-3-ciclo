@@ -15,6 +15,9 @@ public:
     explicit Red_social(QWidget *parent = nullptr);
     ~Red_social();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Red_social *ui;
 };

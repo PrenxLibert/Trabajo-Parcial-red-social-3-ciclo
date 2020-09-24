@@ -6,6 +6,7 @@ Red_social::Red_social(QWidget *parent) :
     ui(new Ui::Red_social)
 {
     ui->setupUi(this);
+    
 }
 
 Red_social::~Red_social()
@@ -15,5 +16,5 @@ Red_social::~Red_social()
 
 void Red_social::on_pushButton_clicked()
 {
-   ui
+   
 }
