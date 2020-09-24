@@ -15,6 +15,10 @@ public:
     explicit interfast(QWidget *parent = nullptr);
     ~interfast();
 
+
+private slots:
+    void on_pushButton_clicked();
+    
 private:
     Ui::interfast *ui;
 };
