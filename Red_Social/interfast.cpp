@@ -13,7 +13,3 @@ interfast::~interfast()
     delete ui;
 }
 
-void interfast::on_pushButton_clicked()
-{
-
-}
