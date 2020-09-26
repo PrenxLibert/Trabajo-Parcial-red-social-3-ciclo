@@ -5,18 +5,16 @@
 typedef unsigned long ul;
 using namespace std;
 
-struct Usuario{
-
+struct User
+{
     QString nombre;
     QString apellido;
     QString usuario;
     QString contrasena;
     ul numero;
+    public:
+    User(QString name = " ", QString a = "pelotudos", QString u = "pussydestroyer", QString c = "************", ul n = 0) : nombre(name), apellido(a), usuario(u), contrasena(c), numero(n) {}
 
-    Usuario(QString name = " ", QString a = " ", QString u= " ", QString c= " ", ul n = 0) : nombre(name), apellido(a), usuario(u), contrasena(c), numero(n)
-    {
-
-    }
 };
 
 #endif // USUARIO_H

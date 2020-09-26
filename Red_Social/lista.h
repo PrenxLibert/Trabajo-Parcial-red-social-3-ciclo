@@ -4,20 +4,9 @@
 #include <string>
 #include <functional>
 #include <vector>
+#include "usuario.h"
 using namespace std;
 typedef unsigned long ul;
-
-struct User
-{
-    string nombre;
-    string apellido;
-    string usuario;
-    string contrasena;
-    ul numero;
-    public:
-    User(string name = " ", string a = "pelotudos", string u = "pussydestroyer", string c = "************", ul n = 0) : nombre(name), apellido(a), usuario(u), contrasena(c), numero(n) {}
-
-};
 
 struct Nodo //Nodo doblemente enlazado
 {
@@ -41,7 +30,7 @@ class List //Lista doblemente enlazada con puntero al final.
         cantidad = 0;
     }
 
-    short getCantidad() { }
+    short getCantidad() {return cantidad; }
     void push(User u) //Insertar nuevo
     {
         Nodo* nuevo = new Nodo(u); //Creando instancia o como quieras verlo, NUEVA DIRECCION PARA SER USADA Y ALMANCENADA. SI ELIMINAS, BORRAS LA DIRECCION Y SE VA A LA SHOTA
@@ -98,7 +87,7 @@ class List //Lista doblemente enlazada con puntero al final.
         }
     }
 
-    void ordenamientoAlfa()
+/*    void ordenamientoAlfa()
     {
       Nodo* aux = start;
       vector <User> usrs;
@@ -111,9 +100,9 @@ class List //Lista doblemente enlazada con puntero al final.
       //Ordenamiento
       User temp;
       short numLetra = 0;
-      for(short i = 0; i < usrs.size() - 1; i++)
+      for(ul i = 0; i < usrs.size() - 1; i++)
       {
-          for(short j = i + 1; j < usrs.size(); j++) //static_cast<int>(f)
+          for(ul j = i + 1; j < usrs.size(); j++) //static_cast<int>(f)
           {
               if(static_cast<int>(usrs.at(i).nombre[numLetra]) < static_cast<int>(usrs.at(j).nombre[numLetra]))
               {
@@ -124,11 +113,11 @@ class List //Lista doblemente enlazada con puntero al final.
           }
       }
       clearList();
-      for(short i = 0; i < usrs.size(); i++)
+      for(ul i = 0; i < usrs.size(); i++)
       {
           push(usrs.at(i));
       }
-  }
+  }*/
 
 };
 

@@ -45,6 +45,7 @@ public:
     QLineEdit *tbxPasswordCon;
     QPushButton *btnRegister;
     QLabel *label_10;
+    QLabel *lblPassword;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -115,6 +116,31 @@ public:
         label_10 = new QLabel(centralwidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(310, 410, 71, 16));
+        lblPassword = new QLabel(centralwidget);
+        lblPassword->setObjectName(QString::fromUtf8("lblPassword"));
+        lblPassword->setGeometry(QRect(390, 380, 47, 13));
+        QPalette palette;
+        QBrush brush(QColor(255, 0, 0, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        QBrush brush1(QColor(255, 0, 0, 128));
+        brush1.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush1);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush1);
+#endif
+        QBrush brush2(QColor(120, 120, 120, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush2);
+        QBrush brush3(QColor(0, 0, 0, 128));
+        brush3.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush3);
+#endif
+        lblPassword->setPalette(palette);
         baseredsocial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(baseredsocial);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -144,6 +170,7 @@ public:
         label_9->setText(QCoreApplication::translate("baseredsocial", "Confirmar contrase\303\261a :", nullptr));
         btnRegister->setText(QCoreApplication::translate("baseredsocial", "Registrar", nullptr));
         label_10->setText(QCoreApplication::translate("baseredsocial", "Resgistrarse :", nullptr));
+        lblPassword->setText(QString());
     } // retranslateUi
 
 };

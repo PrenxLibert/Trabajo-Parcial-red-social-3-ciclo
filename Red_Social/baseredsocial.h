@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "usuario.h"
+#include"lista.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class baseredsocial; }
@@ -11,12 +12,13 @@ QT_END_NAMESPACE
 class baseredsocial : public QMainWindow
 {
     Q_OBJECT
-    Usuario* usr1;
+    User* usr1;
 
 public:
     baseredsocial(QWidget *parent = nullptr);
     ~baseredsocial();
-
+private:
+    List* usrlist;
 private slots:
     
     void on_btnRegister_clicked();
