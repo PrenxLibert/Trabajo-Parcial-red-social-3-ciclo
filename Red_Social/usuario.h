@@ -1,19 +1,30 @@
 #ifndef USUARIO_H
 #define USUARIO_H
 #include <iostream>
+#include<string>
 #include "ui_baseredsocial.h"
+
+
 typedef unsigned long ul;
 using namespace std;
 
 struct User
 {
-    QString nombre;
-    QString apellido;
-    QString usuario;
-    QString contrasena;
+    char nombre[10];
+    char apellido[10];
+    char usuario[10];
+    char contrasena[10];
     ul numero;
+
     public:
-    User(QString name = " ", QString a = "pelotudos", QString u = "pussydestroyer", QString c = "************", ul n = 0) : nombre(name), apellido(a), usuario(u), contrasena(c), numero(n) {}
+    User(string name, string a, string u, string c, ul n = 0) {
+            strcpy(nombre,name.c_str());
+            strcpy(apellido, a.c_str());
+            strcpy(usuario, u.c_str());
+            strcpy(contrasena, c.c_str());
+            numero = n;
+        }
+        User() {}
 
 };
 
