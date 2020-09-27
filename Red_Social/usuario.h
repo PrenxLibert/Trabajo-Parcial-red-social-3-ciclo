@@ -18,10 +18,10 @@ struct User
 
     public:
     User(string name, string a, string u, string c, ul n = 0) {
-            strcpy(nombre,name.c_str());
-            strcpy(apellido, a.c_str());
-            strcpy(usuario, u.c_str());
-            strcpy(contrasena, c.c_str());
+            strcpy_s(nombre,name.c_str());
+            strcpy_s(apellido, a.c_str());
+            strcpy_s(usuario, u.c_str());
+            strcpy_s(contrasena, c.c_str());
 
             numero = n;
         }
