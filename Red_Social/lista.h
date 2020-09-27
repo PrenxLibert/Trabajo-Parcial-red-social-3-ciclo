@@ -6,6 +6,7 @@
 #include <vector>
 #include "usuario.h"
 #include <fstream>
+#include <QFile>
 using namespace std;
 typedef unsigned long ul;
 
@@ -123,67 +124,22 @@ class List //Lista doblemente enlazada con puntero al final.
     bool buscar(string nombre, string contrasena){
 
         Nodo* aux;
-        aux=start;
-        bool existe=false;
+        aux = start;
+        bool existe = false;
 
-        for(int i=0;i<cantidad;i++){
-            if(aux->usuario.nickname == nombre && aux->usuario.contrasena==contrasena)
-                existe=true;
+        for(int i = 0; i < cantidad; i++){
+            if(aux->usuario.nickname == nombre && aux->usuario.contrasena == contrasena)
+                existe = true;
         }
 
         return existe;
     }
-    void guardar() {
-            Nodo* aux=start;
-            ofstream archivo("archivo.dat", ios::binary);
 
-            for (int i = 0; i < cantidad; i++) {
-                archivo.write((char*)&aux->usuario, sizeof(aux->usuario));
-                aux = aux->next;
-            }
-            archivo.close();
-        }
 
-    void leer() {
-      User m;
-      ifstream archivo("archivo.dat", ios::binary);
-      if(!(archivo.fail())){
-          while (!archivo.eof()) {
-              archivo.read((char*)&m, sizeof(m));
-              push(m);
-          }
-          archivo.close();
-      }
-    }
+
 };
 
-/* Parte que tenemos que poner en el main
-int main()
-{
-    List* userList = new List();
 
-    auto print =[](User u)
-    {
-          cout<<"Nombre del usuario: "<< u.nombre <<"\n";
-          cout<<"Apellido del usuario: "<< u.apellido <<"\n";
-          cout<<"Nombre de usuario del usuario: "<< u.usuario <<"\n";
-          cout<<"Contraseña del usuario: "<< u.contrasena <<"\n";
-    };
-
-    User* u1=new User("Pablo");
-    User* u2=new User("Andres");
-    User* u3=new User("Walter");
-
-    userList->push(*u1); userList->push(*u2); userList->push(*u3);
-    userList->printing(print);
-    userList->ordenamientoAlfa();
-    cout<<endl;
-    userList->printing(print);
-    userList->pop(1);
-    cout<<endl;
-    userList->printing(print);
-    return 0;
-}*/
 
 #endif // CUSUARIO_H
 

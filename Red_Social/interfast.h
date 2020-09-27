@@ -1,16 +1,17 @@
 #ifndef INTERFAST_H
 #define INTERFAST_H
 
-#include <QWidget>
+#include <QDialog>
+#include <chat.h>
 
 namespace Ui {
 class interfast;
 }
 
-class interfast : public QWidget
+class interfast : public QDialog
 {
     Q_OBJECT
-
+    chat* c1;
 public:
     explicit interfast(QWidget *parent = nullptr);
     ~interfast();

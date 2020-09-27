@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="publicaciones">
     <widget class="QScrollArea" name="scrollArea">
@@ -77,7 +77,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -106,7 +106,7 @@
         <string>PushButton</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtbx_mensajes">
+      <widget class="QTextEdit" name="chatText">
        <property name="geometry">
         <rect>
          <x>10</x>

@@ -17,7 +17,7 @@ struct User
     ul numero;
 
     public:
-    User(string name, string a, string u, string c, ul n = 0) {
+    User(string name = " ", string a = " ", string u = " ", string c = " ", ul n = 0) {
             strcpy_s(nombre,name.c_str());
             strcpy_s(apellido, a.c_str());
             strcpy_s(nickname, u.c_str());
@@ -25,8 +25,6 @@ struct User
 
             numero = n;
         }
-        User() {}
-
 };
 
 #endif // USUARIO_H

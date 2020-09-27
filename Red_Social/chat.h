@@ -2,39 +2,46 @@
 #define CHAT_H
 #include <QString>
 #include <QFile>
-
-#include <iostream>
+#include <fstream>
+#include <string>
+#include "interfast.h"
+#include <QApplication>
 using namespace std;
 class chat {
 private:
-    QString usuario;
-    QString receptor;
-    QString mensaje = "";
+    string usuario;
+    string receptor;
+    string mensaje = " ";
+
+
 public:
-    chat(QString usu="", QString recep=""):usuario(usu),receptor(recep){}
+    chat(string usu="", string recep=""):usuario(usu),receptor(recep){}
     ~chat(){};
-    void MostrarChat(QString ami){
-        receptor = ami;
-      QString en,re,men;
+    string printChatOnBox(string amigo)
+    {
+
+     //string todosMsjs;
+      receptor = amigo;
+      string emisor, receptor, msj;
       ifstream lectura("mensajes.txt");
-      while (getline(lectura, en, ',')) {
-                getline(lectura, re, ',');
-                getline(lectura, men);
-          if(usuario == en || ami == en || usuario == re || ami == re){
-            cout << en << ": " << men <<"\n";
+      while (getline(lectura, emisor, ',')) {
+                getline(lectura, receptor, ',');
+                getline(lectura, msj);
+          if(usuario == emisor || amigo == emisor || usuario == receptor || amigo == receptor)
+          {
+
           }
       }
-
-
-        lectura.close();
+      lectura.close();
     }
-
-    void enviarmensa(QString nom,QString ami, QString mensa){
+    
+    void enviarmensa(string nom, string ami, string mensa)
+    {
      //cout << usuario << ": "<<mensa;
       ofstream escritura("mensajes.txt", ios::app);
-      escritura << nom <<"," << ami << "," << mensa << "\n" ;
+      escritura << nom << "," << ami << "," << mensa << "\n" ;
       escritura.close();
     }
-
+    
 };
 #endif // CHAT_H
