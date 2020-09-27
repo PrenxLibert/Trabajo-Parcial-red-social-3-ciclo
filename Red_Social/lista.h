@@ -88,7 +88,7 @@ class List //Lista doblemente enlazada con puntero al final.
         }
     }
 
-/*    void ordenamientoAlfa()
+    void ordenamientoAlfa()
     {
       Nodo* aux = start;
       vector <User> usrs;
@@ -118,7 +118,7 @@ class List //Lista doblemente enlazada con puntero al final.
       {
           push(usrs.at(i));
       }
-  }*/
+  }
     void guardar() {
             Nodo* aux=start;
             ofstream archivo("archivo.dat", ios::binary);

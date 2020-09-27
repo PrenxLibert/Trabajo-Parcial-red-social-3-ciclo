@@ -12,6 +12,8 @@ baseredsocial::baseredsocial(QWidget *parent)
     , ui(new Ui::baseredsocial)
 {
     ui->setupUi(this);
+    //usrlist->leer();//se cargan todos los usuarios anteriormente añadidos
+    //falta validar existencia de lista
 }
 
 baseredsocial::~baseredsocial()
@@ -21,17 +23,15 @@ baseredsocial::~baseredsocial()
 
 void baseredsocial::on_btnRegister_clicked()
 {
-    if(ui->tbxName->text()!=""  && ui->tbxLastname->text()!="" && ui->tbxUsrReg->text()!="" && ui->tbxContrasena->text()!=""){
+
        if(ui->tbxPasswordIn->text()==ui->tbxPasswordCon->text()){
             //Usuario(QString name, QString a, QString u, QString c, ul n)
-            usr1 = new User(ui->tbxName->text(), ui->tbxLastname->text(), ui->tbxUsrReg->text(),ui->tbxContrasena->text(),(ui->tbxPhone->text()).toULong());
+            usr1 = new User(ui->tbxName->text().toStdString(), ui->tbxLastname->text().toStdString(), ui->tbxUsrReg->text().toStdString(),ui->tbxContrasena->text().toStdString(),(ui->tbxPhone->text()).toULong());
             usrlist->push(*usr1);
        }else{
            QMessageBox::information(this,tr("error"),tr("las contraseñas no coinciden"));
        }
-    }else{
-        QMessageBox::information(this,tr("error"),tr("debe llenar todos los campos"));
-    }
+
 }
 
 
