@@ -3,19 +3,19 @@
 #include <QString>
 #include <QFile>
 #include <fstream>
-#include <iostream>
+#include <string>
 using namespace std;
 class chat {
 private:
-    QString usuario;
-    QString receptor;
-    QString mensaje = "";
+    string usuario;
+    string receptor;
+    string mensaje = "";
 public:
-    chat(QString usu="", QString recep=""):usuario(usu),receptor(recep){}
+    chat(string usu="", string recep=""):usuario(usu),receptor(recep){}
     ~chat(){};
-    void MostrarChat(QString ami){
+    void MostrarChat(string ami){
         receptor = ami;
-      QString en,re,men;
+      string en,re,men;
       ifstream lectura("mensajes.txt");
       while (getline(lectura, en, ',')) {
                 getline(lectura, re, ',');
@@ -29,7 +29,7 @@ public:
         lectura.close();
     }
     
-    void enviarmensa(QString nom,QString ami, QString mensa){
+    void enviarmensa(string nom, string ami, string mensa){
      //cout << usuario << ": "<<mensa;
       ofstream escritura("mensajes.txt", ios::app);
       escritura << nom <<"," << ami << "," << mensa << "\n" ;
