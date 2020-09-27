@@ -1,0 +1,40 @@
+#ifndef CHAT_H
+#define CHAT_H
+#include <QString>
+#include <QFile>
+class chat {
+private:
+    QString usuario;
+    QString receptor;
+    QString mensaje = "";
+public:
+    chat(QString usu="", QString recep=""):usuario(usu),receptor(recep){}
+    ~chat(){};
+    void MostrarChat(QString ami){
+        receptor = ami;
+      QString en,re,men;
+      ifstream mensaje("casa.txt");
+      while (getline(mensaje, en, ',')) {
+                getline(mensaje, re, ',');
+                getline(mensaje, men);
+          if(usuario == en || ami == en || usuario == re || ami == re){
+            cout << en << ": " << men <<"\n";
+          }
+         
+            
+            }
+        mensaje.close();
+    }
+    
+    void enviarmensa(QString nom,QString ami){
+      cout << "mensaje que quieras escribir \n";
+        string aux;
+            getline(cin, aux);
+        ofstream escritura("casa.txt", ios::app);
+        
+        escritura << nom <<"," << ami << "," << aux << "\n" ;
+        escritura.close();
+    }
+    
+};
+#endif // CHAT_H

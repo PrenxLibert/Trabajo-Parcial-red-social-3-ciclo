@@ -15,6 +15,7 @@ SOURCES += \
 
 HEADERS += \
     baseredsocial.h \
+    chat.h \
     interfast.h \
     lista.h \
     usuario.h
