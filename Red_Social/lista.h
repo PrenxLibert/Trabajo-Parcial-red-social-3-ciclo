@@ -127,7 +127,8 @@ class List //Lista doblemente enlazada con puntero al final.
         bool existe=false;
 
         for(int i=0;i<cantidad;i++){
-            if(aux->usuario.usuario==nombre,aux->usuario.contrasena==contrasena)existe=true;
+            if(aux->usuario.nickname == nombre && aux->usuario.contrasena==contrasena)
+                existe=true;
         }
 
         return existe;
