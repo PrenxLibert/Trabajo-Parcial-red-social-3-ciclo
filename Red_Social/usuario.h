@@ -22,6 +22,7 @@ struct User
             strcpy(apellido, a.c_str());
             strcpy(usuario, u.c_str());
             strcpy(contrasena, c.c_str());
+
             numero = n;
         }
         User() {}
