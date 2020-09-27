@@ -51,6 +51,29 @@ class List //Lista doblemente enlazada con puntero al final.
       ++cantidad;
     }
 
+    void guardar() {
+
+            ofstream archivo("archivo.qfile", ios::binary);
+                Nodo* aux=start;
+                for (int i = 0; i < cantidad; i++) {
+                    archivo<<aux->usuario.nombre;
+                    aux = aux->next;
+                }
+                archivo.close();
+            }
+
+        void leer() {
+          User m;
+          ifstream archivo("archivo.txt", ios::binary);
+          if(!(archivo.fail())){
+             while (!archivo.eof()) /* finaliza el archivo */ {
+               archivo.read((char*)&m, sizeof(m));
+               push(m);
+              }
+             archivo.close();
+          }
+        }
+
     //Limpiar lista
     void clearList()
     {
