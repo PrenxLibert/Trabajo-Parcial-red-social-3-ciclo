@@ -133,11 +133,13 @@ class List //Lista doblemente enlazada con puntero al final.
     void leer() {
       User m;
       ifstream archivo("archivo.dat", ios::binary);
-      while (!archivo.eof()) {
-          archivo.read((char*)&m, sizeof(m));
-          push(m);
+      if(!(archivo.fail())){
+          while (!archivo.eof()) {
+              archivo.read((char*)&m, sizeof(m));
+              push(m);
+          }
+          archivo.close();
       }
-      archivo.close();
     }
 };
 
