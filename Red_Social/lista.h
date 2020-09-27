@@ -5,6 +5,7 @@
 #include <functional>
 #include <vector>
 #include "usuario.h"
+#include <fstream>
 using namespace std;
 typedef unsigned long ul;
 
@@ -118,7 +119,26 @@ class List //Lista doblemente enlazada con puntero al final.
           push(usrs.at(i));
       }
   }*/
+    void guardar() {
+            Nodo* aux=start;
+            ofstream archivo("archivo.dat", ios::binary);
 
+            for (int i = 0; i < cantidad; i++) {
+                archivo.write((char*)&aux->usuario, sizeof(aux->usuario));
+                aux = aux->next;
+            }
+            archivo.close();
+        }
+
+    void leer() {
+      User m;
+      ifstream archivo("archivo.dat", ios::binary);
+      while (!archivo.eof()) {
+          archivo.read((char*)&m, sizeof(m));
+          push(m);
+      }
+      archivo.close();
+    }
 };
 
 /* Parte que tenemos que poner en el main
