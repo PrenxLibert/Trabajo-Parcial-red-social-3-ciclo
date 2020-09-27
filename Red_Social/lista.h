@@ -119,6 +119,19 @@ class List //Lista doblemente enlazada con puntero al final.
           push(usrs.at(i));
       }
   }
+
+    bool buscar(string nombre, string contrasena){
+
+        Nodo* aux;
+        aux=start;
+        bool existe=false;
+
+        for(int i=0;i<cantidad;i++){
+            if(aux->usuario.usuario==nombre,aux->usuario.contrasena==contrasena)existe=true;
+        }
+
+        return existe;
+    }
     void guardar() {
             Nodo* aux=start;
             ofstream archivo("archivo.dat", ios::binary);
