@@ -43,7 +43,7 @@ void baseredsocial::on_btnRegister_clicked()
 void baseredsocial::on_btnLogin_clicked()
 {
     User* logged = new User(" ", " ", ui->tbxUsrLog->text().toStdString(), ui->tbxContrasena->text().toStdString(), " ");
-    interfast* i1 = new interfast(logged); //string nickname, string contrasena
+    interfast* i1 = new interfast(logged,usrlist); //string nickname, string contrasena
     if(usrlist->buscar(ui->tbxUsrLog->text().toStdString(), ui->tbxContrasena->text().toStdString()))
     {
         QMessageBox::information(this, tr("Inicio de sesión"), tr("Bienvenido! ACCESO CONCEDIDO! Cierra para continuar"));

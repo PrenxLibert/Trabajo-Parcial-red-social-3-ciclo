@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include "lista.h"
+#include <vector>
 namespace Ui {
 class interfast;
 }
@@ -53,6 +54,7 @@ private:
     QVBoxLayout* wig = new QVBoxLayout(this);
     QVBoxLayout* wigvacio = new QVBoxLayout(this);
     List* listainter = new List();
+    vector <string> arr;
 
 };
 

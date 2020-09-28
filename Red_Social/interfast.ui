@@ -103,7 +103,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -365,27 +365,6 @@
      </property>
      <property name="text">
       <string>Contraseña:</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="modi_aplicar">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>310</y>
-       <width>141</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Modificar perfil</string>
      </property>
     </widget>
     <widget class="QLabel" name="lbl_usuario">
