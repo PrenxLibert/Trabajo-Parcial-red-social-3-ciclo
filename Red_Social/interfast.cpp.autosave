@@ -1,0 +1,20 @@
+#include "interfast.h"
+#include "ui_interfast.h"
+#include "chat.h"
+#include "lista.h"
+interfast::interfast(QWidget *parent) : QDialog(parent), ui(new Ui::interfast)
+{
+    ui->setupUi(this); 
+    lista = nullptr;
+}
+
+interfast::~interfast()
+{
+    delete ui;
+}
+
+void interfast::on_pushButton_clicked()
+{
+    ui->chatText->append("Leonardo: " + ui->txtbox_envio->text());
+    ui->txtbox_envio->setText(" ");
+}
