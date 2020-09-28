@@ -1,12 +1,14 @@
 #include "interfast.h"
 #include "ui_interfast.h"
+#include "ui_baseredsocial.h"
+#include "baseredsocial.h"
 #include "chat.h"
 
-interfast::interfast(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::interfast)
+
+interfast::interfast(User* _us_log, QWidget *parent) : QDialog(parent), ui(new Ui::interfast)
 {
     ui->setupUi(this);
+    us_log = _us_log;
 }
 
 interfast::~interfast()
@@ -17,6 +19,11 @@ interfast::~interfast()
 
 void interfast::on_pushButton_clicked()
 {
-    ui->chatText->append("Leonardo: " + ui->txtbox_envio->text());
+    ui->chatText->append(QString::fromStdString(us_log->nickname)+ ": " + ui->txtbox_envio->text());
     ui->txtbox_envio->setText(" ");
+}
+
+void interfast::on_pshbu_mos_perfil_clicked()
+{
+
 }

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="publicaciones">
     <widget class="QScrollArea" name="scrollArea">
@@ -751,6 +751,14 @@
     </widget>
    </widget>
    <widget class="QWidget" name="page_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>171</width>
+      <height>190</height>
+     </rect>
+    </property>
     <attribute name="label">
      <string>solicitudes</string>
     </attribute>

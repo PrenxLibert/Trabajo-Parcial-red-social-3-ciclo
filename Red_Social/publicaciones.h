@@ -10,36 +10,30 @@ using namespace std;
 class publicaciones {
 private:
     string usuario;
-    string receptor;
     string mensaje = " ";
 
 
 public:
-    chat(string usu="", string recep=""):usuario(usu),receptor(recep){}
-    ~chat(){};
-    string printChatOnBox(string amigo)
+    publicaciones(string usu=""):usuario(usu){}
+    ~publicaciones(){};
+    void imprimir_publi()
     {
 
      //string todosMsjs;
-      receptor = amigo;
-      string emisor, receptor, msj;
-      ifstream lectura("mensajes.txt");
+      string emisor, msj;
+      ifstream lectura("publicacion.txt");
       while (getline(lectura, emisor, ',')) {
-                getline(lectura, receptor, ',');
                 getline(lectura, msj);
-          if(usuario == emisor || amigo == emisor || usuario == receptor || amigo == receptor)
-          {
-
-          }
+          
       }
       lectura.close();
     }
 
-    void enviarmensa(string nom, string ami, string mensa)
+    void enviarmensa(string mensa)
     {
      //cout << usuario << ": "<<mensa;
       ofstream escritura("mensajes.txt", ios::app);
-      escritura << nom << "," << ami << "," << mensa << "\n" ;
+      escritura << usuario <<"," << mensa << "\n" ;
       escritura.close();
     }
 
