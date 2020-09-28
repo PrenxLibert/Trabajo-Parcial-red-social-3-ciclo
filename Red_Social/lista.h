@@ -11,19 +11,20 @@
 using namespace std;
 typedef unsigned long ul;
 
+template <class T>
 struct Nodo //Nodo doblemente enlazado
 {
     Nodo* prev;
     Nodo* next;
-    User usuario; //"valor"
+    T usuario; //"valor"
     public:
     Nodo(User us= User(),Nodo* s = nullptr, Nodo* a = nullptr ): prev(a), next(s), usuario(us){}
 };
 
 class List //Lista doblemente enlazada con puntero al final.
 {
-    Nodo* start;
-    Nodo* last;
+    Nodo<User>* start;
+    Nodo<User>* last;
     short cantidad;
 
     public:
@@ -33,11 +34,11 @@ class List //Lista doblemente enlazada con puntero al final.
         cantidad = 0;
     }
 
-    short getCantidad() {return cantidad; }
+    short getCantidad() { return cantidad; }
 
     void push(User u) //Insertar nuevo
     {
-        Nodo* nuevo = new Nodo(u); //Creando instancia o como quieras verlo, NUEVA DIRECCION PARA SER USADA Y ALMANCENADA. SI ELIMINAS, BORRAS LA DIRECCION Y SE VA A LA SHOTA
+        Nodo<User>* nuevo = new Nodo<User>(u); //Creando instancia o como quieras verlo, NUEVA DIRECCION PARA SER USADA Y ALMANCENADA. SI ELIMINAS, BORRAS LA DIRECCION Y SE VA A LA SHOTA
         if(start == nullptr)
         {
             start=nuevo;
@@ -55,10 +56,13 @@ class List //Lista doblemente enlazada con puntero al final.
 
   void write(User u)
   {
+      auto write_lambda = [](User u){
+          ofstream file_wchat("reg_users.txt", std::ios::app); //Agregar al final
+          file_wchat<<u.nombre<<","<<u.apellido<<","<<u.nickname<<","<<u.numero<<","<<u.psswrd<<"\n";
+          file_wchat.close();
+      };
 
-      ofstream file_wchat("reg_users.txt", std::ios::app); //Agregar al final
-      file_wchat<<u.nombre<<","<<u.apellido<<","<<u.nickname<<","<<u.numero<<","<<u.psswrd<<"\n";
-      file_wchat.close();
+      write_lambda(u);
   }
 
   void read()
@@ -84,7 +88,7 @@ class List //Lista doblemente enlazada con puntero al final.
     //Limpiar lista
     void clearList()
     {
-        Nodo* temp = start;
+        Nodo<User>* temp = start;
         while(temp != nullptr)
         {
             start = temp->next;
@@ -97,13 +101,13 @@ class List //Lista doblemente enlazada con puntero al final.
     //Eliminar
     void pop(int pos)
     {
-        Nodo* temp = start;
+        Nodo<User>* temp = start;
 
         for(short i = 0; i < pos - 1; i++)
         {
             temp = temp->next;
         }
-        Nodo* temp2 = temp->next; //Auxiliar para borrar
+        Nodo<User>* temp2 = temp->next; //Auxiliar para borrar
         temp->next = temp->next->next;
         temp->next->prev->prev = temp;
         delete temp2;
@@ -111,7 +115,7 @@ class List //Lista doblemente enlazada con puntero al final.
 
     void printing(function<void(User)> ave)
     {
-        Nodo* aux = start;
+        Nodo<User>* aux = start;
         while(aux != nullptr)
         {
             ave(aux->usuario);
@@ -121,7 +125,7 @@ class List //Lista doblemente enlazada con puntero al final.
 
     void ordenamientoAlfa()
     {
-      Nodo* aux = start;
+      Nodo<User>* aux = start;
       vector <User> usrs;
       //Llenar vector de usuarios
       while(aux != nullptr)
@@ -153,7 +157,7 @@ class List //Lista doblemente enlazada con puntero al final.
 
     bool buscar(string nombre, string contrasena){
 
-        Nodo* aux;
+        Nodo<User>* aux;
         aux = start;
         bool existe = false;
         for(int i = 0; i < cantidad; i++){
@@ -165,8 +169,15 @@ class List //Lista doblemente enlazada con puntero al final.
         }
         return existe;
     }
-    User* getUser(int pos){
-        return start->usuario;
+
+    User* getUser(int pos)
+    {
+        Nodo<User> *aux = start;
+        for(short i = 0; i < pos; i++)
+        {
+            aux = aux->next;
+        }
+        return &aux->usuario;
     }
 
 

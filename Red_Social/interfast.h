@@ -49,12 +49,17 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+
+
 private:
     Ui::interfast *ui;
     QVBoxLayout* wig = new QVBoxLayout(this);
     QVBoxLayout* wigvacio = new QVBoxLayout(this);
     List* listainter = new List();
     vector <string> arr;
+public:
+    void sort_por_alfabeto();
+
 
 };
 

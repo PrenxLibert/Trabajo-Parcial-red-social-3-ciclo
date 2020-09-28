@@ -10,16 +10,6 @@ interfast::interfast(User* _us_log, List* Listain, QWidget *parent) :QDialog(par
     us_log = _us_log;
     ui->setupUi(this);
 
-        for(short i = 0; i < n; i++)
-        {
-            if(palabra[0] == listainter->getUser()->nombre[0])
-            {
-                arr->push_back(listainter->getUser()->nombre);
-            }
-        }
-
-
-
     //connect(ui->pshbu_mos_perfil,SIGMA(released()),this,SLOT(MathButtonPresend()));
     string emisor, receptor, status;
     ifstream amigos_l("amiwis.txt");
@@ -50,6 +40,41 @@ interfast::~interfast()
     delete ui;
 }
 
+void interfast::sort_por_alfabeto()
+{
+    //Comparación de primeras letras
+    for(short i = 0; i < listainter->getCantidad(); i++)
+    {
+        if(ui->ledt_nickname->text().toStdString()[0] == listainter->getUser(i)->nombre[0])
+        {
+            arr.push_back(listainter->getUser(i)->nombre);
+        }
+    }
+
+    //Método burbuja para ordenamiento de busqueda en orden alfabético
+        string temp;
+        short numLetra = 0;
+        for(short i = 0; i < short(arr.size()) - 1; i++)
+          {
+              for(short j = i + 1; j < short(arr.size()); j++) //static_cast<int>(f)
+              {
+                  if(static_cast<int>(arr.at(i)[numLetra]) < static_cast<int>(arr.at(j)[numLetra]))
+                  {
+                      temp = arr[j];
+                      arr[j] = arr[i];
+                      arr[i] = temp;
+                  }
+                  if(static_cast<int>(arr.at(i)[numLetra]) == static_cast<int>(arr.at(j)[numLetra]))
+                  {
+                      ++numLetra; j--;
+                  }
+              }
+          }
+
+        ui->user1->setText(QString::fromStdString(arr.at(0)));
+        ui->user2->setText(QString::fromStdString(arr.at(1)));
+        ui->user3->setText(QString::fromStdString(arr.at(2)));
+}
 
 void interfast::on_pushButton_clicked()
 {
