@@ -17,7 +17,7 @@ private:
 public:
     chat(string usu="", string recep=""):usuario(usu),receptor(recep){}
     ~chat(){};
-    string printChatOnBox(string amigo)
+    void printChatOnBox(string amigo)
     {
 
      //string todosMsjs;

@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <chat.h>
 #include <lista.h>
+#include <QVBoxLayout>
+#include <QLabel>
 namespace Ui {
 class interfast;
 }
@@ -35,8 +37,20 @@ private slots:
 
     void on_btnDecline_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_psbu_solicitud1_clicked();
+
+    void on_psbu_solicitud2_clicked();
+
+    void on_psbu_solicitud3_clicked();
+
+    void on_pushButton_5_clicked();
+
 private:
     Ui::interfast *ui;
+    QVBoxLayout* wig = new QVBoxLayout(this);
+    QVBoxLayout* wigvacio = new QVBoxLayout(this);
 
 };
 
