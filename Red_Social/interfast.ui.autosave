@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>586</width>
-    <height>369</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -470,11 +470,11 @@
      <x>10</x>
      <y>100</y>
      <width>171</width>
-     <height>271</height>
+     <height>281</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_2">
     <property name="geometry">
@@ -482,7 +482,7 @@
       <x>0</x>
       <y>0</y>
       <width>171</width>
-      <height>190</height>
+      <height>200</height>
      </rect>
     </property>
     <attribute name="label">
@@ -494,7 +494,7 @@
        <x>10</x>
        <y>0</y>
        <width>151</width>
-       <height>161</height>
+       <height>151</height>
       </rect>
      </property>
      <property name="widgetResizable">
@@ -506,7 +506,7 @@
         <x>0</x>
         <y>0</y>
         <width>149</width>
-        <height>159</height>
+        <height>149</height>
        </rect>
       </property>
      </widget>
@@ -515,7 +515,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>190</y>
+       <y>180</y>
        <width>113</width>
        <height>20</height>
       </rect>
@@ -525,9 +525,9 @@
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>190</y>
+       <y>180</y>
        <width>51</width>
-       <height>23</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -538,7 +538,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>170</y>
+       <y>160</y>
        <width>131</width>
        <height>16</height>
       </rect>
@@ -554,7 +554,7 @@
       <x>0</x>
       <y>0</y>
       <width>171</width>
-      <height>190</height>
+      <height>200</height>
      </rect>
     </property>
     <attribute name="label">
@@ -760,7 +760,7 @@
        <x>0</x>
        <y>0</y>
        <width>171</width>
-       <height>111</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="widgetResizable">
@@ -772,7 +772,7 @@
         <x>0</x>
         <y>0</y>
         <width>169</width>
-        <height>109</height>
+        <height>119</height>
        </rect>
       </property>
      </widget>
@@ -791,7 +791,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>160</y>
+       <y>170</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -803,14 +803,27 @@
     <widget class="QPushButton" name="pushButton_7">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>90</x>
        <y>170</y>
        <width>75</width>
        <height>23</height>
       </rect>
      </property>
      <property name="text">
-      <string>aceptar</string>
+      <string>eliminar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>¿A quien quieres responder?</string>
      </property>
     </widget>
    </widget>
