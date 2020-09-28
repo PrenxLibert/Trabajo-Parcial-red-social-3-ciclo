@@ -14,29 +14,26 @@ private:
 
 
 public:
-    publicaciones(string usu="", string recep=""):usuario(usu),receptor(recep){}
+    publicaciones(string usu=""):usuario(usu){}
     ~publicaciones(){};
-    string imprimir_pub()
+    void imprimir_publi()
     {
 
      //string todosMsjs;
       string emisor, msj;
-      ifstream lectura("mensajes.txt");
+      ifstream lectura("publicacion.txt");
       while (getline(lectura, emisor, ',')) {
                 getline(lectura, msj);
-          if(usuario == emisor)
-          {
-
-          }
+          
       }
       lectura.close();
     }
 
-    void enviarmensa(string nom, string ami, string mensa)
+    void enviarmensa(string mensa)
     {
      //cout << usuario << ": "<<mensa;
       ofstream escritura("mensajes.txt", ios::app);
-      escritura << nom << "," << ami << "," << mensa << "\n" ;
+      escritura << usuario <<"," << mensa << "\n" ;
       escritura.close();
     }
 
