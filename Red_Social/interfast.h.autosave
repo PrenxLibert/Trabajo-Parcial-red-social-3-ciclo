@@ -1,0 +1,29 @@
+#ifndef INTERFAST_H
+#define INTERFAST_H
+
+#include <QDialog>
+#include <chat.h>
+#include "lista.h"
+
+namespace Ui {
+class interfast;
+}
+
+class interfast : public QDialog
+{
+    Q_OBJECT
+    chat* c1;
+    List* lista;
+    
+public:
+    explicit interfast(List* li, QWidget *parent = nullptr);
+    ~interfast();
+
+private slots:
+    void on_pushButton_clicked();
+    
+private:
+    Ui::interfast *ui;
+};
+
+#endif // INTERFAST_H
