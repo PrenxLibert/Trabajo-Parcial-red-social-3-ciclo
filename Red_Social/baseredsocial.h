@@ -17,6 +17,7 @@ class baseredsocial : public QMainWindow
 public:
     baseredsocial(QWidget *parent = nullptr);
     ~baseredsocial();
+    List* getUsrList(){ return usrlist; }
 private:
 
 private slots:

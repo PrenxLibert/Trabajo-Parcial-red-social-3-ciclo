@@ -133,6 +133,9 @@
        </property>
       </widget>
       <widget class="QTextEdit" name="chatText">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -500,7 +503,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page_2">
     <property name="geometry">
@@ -782,7 +785,7 @@
       <x>0</x>
       <y>0</y>
       <width>171</width>
-      <height>190</height>
+      <height>200</height>
      </rect>
     </property>
     <attribute name="label">
@@ -811,7 +814,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
+    <widget class="QLineEdit" name="ledt_nickname">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -821,7 +824,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="btnAccept">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -834,7 +837,7 @@
       <string>aceptar</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="btnDecline">
      <property name="geometry">
       <rect>
        <x>90</x>

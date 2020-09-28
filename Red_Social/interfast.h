@@ -17,12 +17,27 @@ public:
     explicit interfast(User* _us_log = new User(), QWidget *parent = nullptr);
     ~interfast();
 
+
+
+User* getUserLogged() { return us_log; }
+
+void readFriendship_Data()
+{
+
+}
+
 private slots:
     void on_pushButton_clicked();
     
     void on_pshbu_mos_perfil_clicked();
+
+    void on_btnAccept_clicked();
+
+    void on_btnDecline_clicked();
+
 private:
     Ui::interfast *ui;
+
 };
 
 #endif // INTERFAST_H

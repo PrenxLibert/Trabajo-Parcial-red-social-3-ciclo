@@ -39,6 +39,7 @@ void baseredsocial::on_btnRegister_clicked()
 
 
 
+
 void baseredsocial::on_btnLogin_clicked()
 {
     User* logged = new User(" ", " ", ui->tbxUsrLog->text().toStdString(), ui->tbxContrasena->text().toStdString(), " ");
