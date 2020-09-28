@@ -24,8 +24,7 @@ public:
       ifstream lectura("publicacion.txt");
       while (getline(lectura, emisor, ',')) {
                 getline(lectura, msj);
-
-      }
+                     }
       lectura.close();
     }
 

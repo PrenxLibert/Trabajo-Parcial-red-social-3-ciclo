@@ -8,14 +8,10 @@
 #include "lista.h"
 using std::string;
 
-baseredsocial::baseredsocial(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::baseredsocial)
+baseredsocial::baseredsocial(QWidget *parent) : QMainWindow(parent), ui(new Ui::baseredsocial)
 {
     ui->setupUi(this);
     usrlist = new List(); usrlist->read();
-    //usrlist->leer();//se cargan todos los usuarios anteriormente añadidos
-
 }
 
 baseredsocial::~baseredsocial()
@@ -45,13 +41,13 @@ void baseredsocial::on_btnRegister_clicked()
 
 void baseredsocial::on_btnLogin_clicked()
 {
-
-    interfast i1; //string nickname, string contrasena
+    User* logged = new User(" ", " ", ui->tbxUsrLog->text().toStdString(), ui->tbxContrasena->text().toStdString(), " ");
+    interfast* i1 = new interfast(logged); //string nickname, string contrasena
     if(usrlist->buscar(ui->tbxUsrLog->text().toStdString(), ui->tbxContrasena->text().toStdString()))
     {
         QMessageBox::information(this, tr("Inicio de sesión"), tr("Bienvenido! ACCESO CONCEDIDO! Cierra para continuar"));
-        i1.setModal(true);
-        i1.exec();
+        i1->setModal(true);
+        i1->exec();
     }
     else
     {
