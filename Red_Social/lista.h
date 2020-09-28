@@ -165,6 +165,9 @@ class List //Lista doblemente enlazada con puntero al final.
         }
         return existe;
     }
+    User* getUser(int pos){
+        return start->usuario;
+    }
 
 
 };

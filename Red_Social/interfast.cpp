@@ -10,6 +10,15 @@ interfast::interfast(User* _us_log, List* Listain, QWidget *parent) :QDialog(par
     us_log = _us_log;
     ui->setupUi(this);
 
+        for(short i = 0; i < n; i++)
+        {
+            if(palabra[0] == listainter->getUser()->nombre[0])
+            {
+                arr->push_back(listainter->getUser()->nombre);
+            }
+        }
+
+
 
     //connect(ui->pshbu_mos_perfil,SIGMA(released()),this,SLOT(MathButtonPresend()));
     string emisor, receptor, status;
@@ -163,7 +172,7 @@ void interfast::on_pushButton_5_clicked()
                getline(amigos_l, receptor, ',');
                getline(amigos_l,status);
                if(status == "2"){
-                   if(ui->txtbox_amigos->text()= QString::fromStdString(receptor)){
+                   if(ui->txtbox_amigos->text()== QString::fromStdString(receptor)){
                        //aqui deberia pasar todos los datos del receptor
 
                    }
