@@ -18,6 +18,7 @@ HEADERS += \
     chat.h \
     interfast.h \
     lista.h \
+    publicaciones.h \
     usuario.h
 
 FORMS += \

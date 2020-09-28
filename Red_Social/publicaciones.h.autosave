@@ -1,0 +1,44 @@
+#ifndef PUBLICACIONES_H
+#define PUBLICACIONES_H
+#include <QString>
+#include <QFile>
+#include <fstream>
+#include <string>
+#include "interfast.h"
+#include <QApplication>
+using namespace std;
+class publicaciones {
+private:
+    string usuario;
+    string mensaje = " ";
+
+
+public:
+    publicaciones(string usu="", string recep=""):usuario(usu),receptor(recep){}
+    ~publicaciones(){};
+    string imprimir_pub()
+    {
+
+     //string todosMsjs;
+      string emisor, msj;
+      ifstream lectura("mensajes.txt");
+      while (getline(lectura, emisor, ',')) {
+                getline(lectura, msj);
+          if(usuario == emisor)
+          {
+
+          }
+      }
+      lectura.close();
+    }
+
+    void enviarmensa(string nom, string ami, string mensa)
+    {
+     //cout << usuario << ": "<<mensa;
+      ofstream escritura("mensajes.txt", ios::app);
+      escritura << nom << "," << ami << "," << mensa << "\n" ;
+      escritura.close();
+    }
+
+};
+#endif // PUBLICACIONES_H
