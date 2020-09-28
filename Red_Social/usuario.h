@@ -14,10 +14,10 @@ struct User
     string apellido;
     string nickname;
     string psswrd;
-    ul numero;
+    string numero;
 
     public:
-    User(string n = " ", string a = " ", string ni = " ", string c = " ", ul nu = 0)
+    User(string n = " ", string a = " ", string ni = " ", string c = " ", string nu = " ")
     {
         nombre = n;
         apellido = a;

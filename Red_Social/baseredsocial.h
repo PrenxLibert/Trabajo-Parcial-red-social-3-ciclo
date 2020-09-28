@@ -12,7 +12,7 @@ QT_END_NAMESPACE
 class baseredsocial : public QMainWindow
 {
     Q_OBJECT
-    User* usr1;
+
 
 public:
     baseredsocial(QWidget *parent = nullptr);

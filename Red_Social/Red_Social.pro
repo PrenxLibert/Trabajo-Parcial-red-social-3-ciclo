@@ -33,4 +33,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    ../build-Red_Social-Desktop_Qt_5_15_1_MSVC2015_64bit-Debug/reg_users.txt \
     mensajes.txt
