@@ -10,21 +10,22 @@ using namespace std;
 
 struct User
 {
-    char nombre[10];
-    char apellido[10];
-    char nickname[10];
-    char contrasena[10];
+    string nombre;
+    string apellido;
+    string nickname;
+    string psswrd;
     ul numero;
 
     public:
-    User(string name = " ", string a = " ", string u = " ", string c = " ", ul n = 0) {
-            strcpy_s(nombre,name.c_str());
-            strcpy_s(apellido, a.c_str());
-            strcpy_s(nickname, u.c_str());
-            strcpy_s(contrasena, c.c_str());
+    User(string n = " ", string a = " ", string ni = " ", string c = " ", ul nu = 0)
+    {
+        nombre = n;
+        apellido = a;
+        nickname = ni;
+        psswrd = c;
+        numero = nu;
+    }
 
-            numero = n;
-        }
 };
 
 #endif // USUARIO_H

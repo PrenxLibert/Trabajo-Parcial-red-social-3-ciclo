@@ -13,6 +13,7 @@ baseredsocial::baseredsocial(QWidget *parent)
     , ui(new Ui::baseredsocial)
 {
     ui->setupUi(this);
+    usrlist = new List();
     //usrlist->leer();//se cargan todos los usuarios anteriormente añadidos
 
 }
@@ -21,7 +22,7 @@ baseredsocial::~baseredsocial()
 {
     delete ui;
 }
-
+//lista
 void baseredsocial::on_btnRegister_clicked()
 {
 
@@ -29,7 +30,8 @@ void baseredsocial::on_btnRegister_clicked()
        {
             //Usuario(QString name, QString a, QString u, QString c, ul n)
             usr1 = new User(ui->tbxName->text().toStdString(), ui->tbxLastname->text().toStdString(), ui->tbxUsrReg->text().toStdString(),ui->tbxPasswordIn->text().toStdString(),(ui->tbxPhone->text()).toULong());
-            //usrlist->push(*usr1);
+       //lista->guardardatosdeusuarioentexto()
+            usrlist->push(*usr1);
             //usrlist->guardar();//guarda en la lista el nuevo usuario registrado
        }
        else
@@ -45,7 +47,7 @@ void baseredsocial::on_btnLogin_clicked()
 {
 
     interfast i1;
-    if(usr1->nickname == ui->tbxUsrLog->text() && usr1->contrasena == ui->tbxContrasena->text() )
+    if(usr1->nickname == ui->tbxUsrLog->text().toStdString() && usr1->psswrd == ui->tbxContrasena->text().toStdString())
     {
         QMessageBox::information(this, tr("Inicio de sesión"), tr("Bienvenido! ACCESO CONCEDIDO! Cierra para continuar"));
         i1.setModal(true);

@@ -23,7 +23,7 @@ class List //Lista doblemente enlazada con puntero al final.
 {
     Nodo* start;
     Nodo* last;
-    short cantidad = 0;
+    short cantidad;
 
     public:
     List()
@@ -33,10 +33,11 @@ class List //Lista doblemente enlazada con puntero al final.
     }
 
     short getCantidad() {return cantidad; }
+
     void push(User u) //Insertar nuevo
     {
         Nodo* nuevo = new Nodo(u); //Creando instancia o como quieras verlo, NUEVA DIRECCION PARA SER USADA Y ALMANCENADA. SI ELIMINAS, BORRAS LA DIRECCION Y SE VA A LA SHOTA
-        if(start==nullptr)
+        if(cantidad == 0)
         {
             start=nuevo;
             last=nuevo;
@@ -51,28 +52,17 @@ class List //Lista doblemente enlazada con puntero al final.
       ++cantidad;
     }
 
-    void guardar() {
+  void read()
+  {
+      ofstream file_wchat("chat.txt");
 
-            ofstream archivo("archivo.qfile", ios::binary);
-                Nodo* aux=start;
-                for (int i = 0; i < cantidad; i++) {
-                    archivo<<aux->usuario.nombre;
-                    aux = aux->next;
-                }
-                archivo.close();
-            }
+  }
 
-        void leer() {
-          User m;
-          ifstream archivo("archivo.txt", ios::binary);
-          if(!(archivo.fail())){
-             while (!archivo.eof()) /* finaliza el archivo */ {
-               archivo.read((char*)&m, sizeof(m));
-               push(m);
-              }
-             archivo.close();
-          }
-        }
+  void write()
+  {
+
+
+  }
 
     //Limpiar lista
     void clearList()
@@ -151,7 +141,7 @@ class List //Lista doblemente enlazada con puntero al final.
         bool existe = false;
 
         for(int i = 0; i < cantidad; i++){
-            if(aux->usuario.nickname == nombre && aux->usuario.contrasena == contrasena)
+            if(aux->usuario.nickname == nombre && aux->usuario.psswrd == contrasena)
                 existe = true;
         }
 
