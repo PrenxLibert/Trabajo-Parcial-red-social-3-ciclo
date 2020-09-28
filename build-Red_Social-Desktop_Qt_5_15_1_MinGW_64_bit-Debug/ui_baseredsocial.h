@@ -53,7 +53,7 @@ public:
     {
         if (baseredsocial->objectName().isEmpty())
             baseredsocial->setObjectName(QString::fromUtf8("baseredsocial"));
-        baseredsocial->resize(800, 475);
+        baseredsocial->resize(841, 485);
         centralwidget = new QWidget(baseredsocial);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -73,7 +73,7 @@ public:
         btnLogin->setGeometry(QRect(680, 20, 75, 23));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(310, 100, 61, 21));
+        label_3->setGeometry(QRect(300, 100, 81, 21));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(330, 150, 47, 13));
@@ -144,7 +144,7 @@ public:
         baseredsocial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(baseredsocial);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 841, 21));
         baseredsocial->setMenuBar(menubar);
         statusbar = new QStatusBar(baseredsocial);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -161,7 +161,7 @@ public:
         label->setText(QCoreApplication::translate("baseredsocial", "Usuario", nullptr));
         label_2->setText(QCoreApplication::translate("baseredsocial", "Contrase\303\261a", nullptr));
         btnLogin->setText(QCoreApplication::translate("baseredsocial", "Log in", nullptr));
-        label_3->setText(QCoreApplication::translate("baseredsocial", "Resgitrarse", nullptr));
+        label_3->setText(QCoreApplication::translate("baseredsocial", "Registrarse:", nullptr));
         label_4->setText(QCoreApplication::translate("baseredsocial", "Nombre :", nullptr));
         label_5->setText(QCoreApplication::translate("baseredsocial", "Apellidos :", nullptr));
         label_6->setText(QCoreApplication::translate("baseredsocial", "Telefono :", nullptr));

@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>586</width>
-    <height>369</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QStackedWidget" name="Tu_perfil">
+  <widget class="QStackedWidget" name="stacked_all">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -23,10 +23,10 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="publicaciones">
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QScrollArea" name="scrArea_publi">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -53,14 +53,40 @@
         <height>339</height>
        </rect>
       </property>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QTextEdit" name="textEdit">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>381</width>
-         <height>341</height>
+         <x>10</x>
+         <y>20</y>
+         <width>281</width>
+         <height>71</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pshbu_envi_publi">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>30</y>
+         <width>75</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>enviar</string>
        </property>
       </widget>
      </widget>
@@ -424,10 +450,10 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pshbu_mos_perfil">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>20</y>
      <width>91</width>
      <height>31</height>
@@ -470,11 +496,11 @@
      <x>10</x>
      <y>100</y>
      <width>171</width>
-     <height>271</height>
+     <height>281</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_2">
     <property name="geometry">
@@ -482,7 +508,7 @@
       <x>0</x>
       <y>0</y>
       <width>171</width>
-      <height>190</height>
+      <height>200</height>
      </rect>
     </property>
     <attribute name="label">
@@ -494,7 +520,7 @@
        <x>10</x>
        <y>0</y>
        <width>151</width>
-       <height>161</height>
+       <height>151</height>
       </rect>
      </property>
      <property name="widgetResizable">
@@ -506,7 +532,7 @@
         <x>0</x>
         <y>0</y>
         <width>149</width>
-        <height>159</height>
+        <height>149</height>
        </rect>
       </property>
      </widget>
@@ -515,7 +541,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>190</y>
+       <y>180</y>
        <width>113</width>
        <height>20</height>
       </rect>
@@ -525,9 +551,9 @@
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>190</y>
+       <y>180</y>
        <width>51</width>
-       <height>23</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -538,7 +564,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>170</y>
+       <y>160</y>
        <width>131</width>
        <height>16</height>
       </rect>
@@ -554,7 +580,7 @@
       <x>0</x>
       <y>0</y>
       <width>171</width>
-      <height>190</height>
+      <height>200</height>
      </rect>
     </property>
     <attribute name="label">
@@ -754,6 +780,78 @@
     <attribute name="label">
      <string>solicitudes</string>
     </attribute>
+    <widget class="QScrollArea" name="scrollArea_6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>171</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>169</width>
+        <height>119</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>aceptar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>170</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>eliminar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>¿A quien quieres responder?</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

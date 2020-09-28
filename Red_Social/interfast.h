@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButton_clicked();
     
+    void on_pshbu_mos_perfil_clicked();
+
 private:
     Ui::interfast *ui;
 };

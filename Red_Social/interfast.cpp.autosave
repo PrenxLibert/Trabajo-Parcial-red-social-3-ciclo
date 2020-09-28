@@ -7,6 +7,7 @@ interfast::interfast(QWidget *parent) :
     ui(new Ui::interfast)
 {
     ui->setupUi(this);
+    connect(ui->pshbu_mos_perfil,SIGMA(released()),this,SLOT(MathButtonPresend()));
 }
 
 interfast::~interfast()
@@ -23,5 +24,4 @@ void interfast::on_pushButton_clicked()
 
 void interfast::on_pshbu_mos_perfil_clicked()
 {
-   ui->
 }
