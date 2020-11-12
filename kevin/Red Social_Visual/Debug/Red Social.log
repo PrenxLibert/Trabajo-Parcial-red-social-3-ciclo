@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Kevin\Documents\algoritmia\red social\Red Social\Cuenta.h(43,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Kevin\Documents\algoritmia\red social\Red Social\Source.cpp(34,20): warning C4018: '<': no coinciden signed/unsigned
+  Source.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  Red Social.vcxproj -> C:\Users\Kevin\Documents\algoritmia\red social\Red Social\Debug\Red Social.exe
