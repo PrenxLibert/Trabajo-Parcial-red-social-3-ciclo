@@ -9,6 +9,7 @@ Interfas::Interfas(User*& u,QWidget *parent) :
     usuario=u;
 
 
+
 }
 
 Interfas::~Interfas()

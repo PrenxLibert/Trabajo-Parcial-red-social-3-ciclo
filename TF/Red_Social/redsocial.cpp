@@ -35,7 +35,7 @@ bool RedSocial:: Ldata(){
     return validador;
 }
 
-void RedSocial::Loged(User *u){
+void RedSocial::Loged(User* u){
 
     Interfas *it= new Interfas(u,this);
     it->show();
