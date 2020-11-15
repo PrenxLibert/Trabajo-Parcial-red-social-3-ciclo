@@ -1,5 +1,6 @@
 #include "redsocial.h"
 #include "ui_redsocial.h"
+#include "interfas.h"
 
 RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial){
     ui->setupUi(this);
@@ -45,23 +46,27 @@ bool RedSocial:: Ldata(){
     return validador;
 }
 
+void RedSocial::Loged(User *u){
+
+    Interfas *it= new Interfas(u,this);
+    it->show();
+}
+
 void RedSocial::on_btnLog_clicked()
 {
    if(Ldata()){
-       User u;
-       u.userName=ui->tbxLUser->text().toStdString();
-       u.userName=ui->tbxLPss->text().toStdString();
+       User u(ui->tbxName->text().toStdString(),"",ui->tbxLPss->text().toStdString(),0,ui->tbxLUser->text().toStdString());
 
        auto criterio=[](User a, User b){
-           if(a.userName==a.userName && a.password==a.password){
-               return true;
-           }
+           if(a.userName==b.userName && a.password==b.password){return true;}
            else return false;
        };
 
        if(usuarios[u.name].Exist(u,criterio)){
            User *us=usuarios[u.name].buscar(u,criterio);
            QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
+           Loged(us);
+
        }else{
             QMessageBox::information(this,tr("Loged"),tr("Usted  no se ha logueado "));
        }

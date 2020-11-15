@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.13.1, 2020-11-14T23:19:24. -->
+<!-- Written by QtCreator 4.13.1, 2020-11-15T17:07:30. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -325,8 +325,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Kevin/Documents/algoritmia/TF pruebas/Red_Social/Red_Social.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Kevin/Documents/algoritmia/TF pruebas/Red_Social/Red_Social.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Red_Social2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Kevin/Documents/GitHub/Trabajo-Parcial-red-social-3-ciclo/TF/Red_Social/Red_Social.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Kevin/Documents/GitHub/Trabajo-Parcial-red-social-3-ciclo/TF/Red_Social/Red_Social.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>

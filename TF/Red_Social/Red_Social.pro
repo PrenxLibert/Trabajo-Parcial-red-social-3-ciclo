@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    interfas.cpp \
     main.cpp \
     redsocial.cpp
 
@@ -17,9 +18,11 @@ HEADERS += \
     Library.h \
     Tree.h \
     User.h \
+    interfas.h \
     redsocial.h
 
 FORMS += \
+    interfas.ui \
     redsocial.ui
 
 # Default rules for deployment.

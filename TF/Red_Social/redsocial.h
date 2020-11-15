@@ -17,6 +17,7 @@ public:
     ~RedSocial();
     bool data();
     bool Ldata();
+    void Loged(User* u);
 private slots:
     void on_btnReg_clicked();
 
