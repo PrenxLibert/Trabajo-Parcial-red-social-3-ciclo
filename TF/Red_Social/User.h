@@ -15,7 +15,7 @@ struct User{
 
     User(string n,string l,string p,short o,string u):name(n),lastname(l),password(p),old(o),userName(u){
 
-        auto edad = [](User m, User n) {return m.name > n.name; };
+        auto edad = [](User m, User n) {return m.userName > n.userName; };
         auto print = [](User c) {};
         contactos = HashTable<User>(edad,print);
 

@@ -15,9 +15,12 @@ class RedSocial : public QMainWindow
 public:
     RedSocial(QWidget *parent = nullptr);
     ~RedSocial();
+
     bool data();
     bool Ldata();
     void Loged(User* u);
+    void Login(User u);
+
 private slots:
     void on_btnReg_clicked();
 
