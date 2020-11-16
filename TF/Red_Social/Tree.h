@@ -62,7 +62,7 @@ private:
     T* _buscar(T e,Nodo<T>*aux,function<bool(T,T)>existencia) {
         if (aux == nullptr) return nullptr;
         else if (existencia(aux->val,e)) {
-            return &e;
+            return &aux->val;
         }
         else if (criterio(aux->val, e)) {
             return _buscar(e, aux->L,existencia);
@@ -72,18 +72,6 @@ private:
         }
     }
 
-    bool _Exist(T e,Nodo<T>*aux,function<bool(T,T)>existencia) {
-        if (aux == nullptr) return false;
-        else if (existencia(aux->val,e)) {
-            return true;
-        }
-        else if (criterio(aux->val, e)) {
-            return _Exist(e, aux->L,existencia);
-        }
-        else {
-            return _Exist(e, aux->R,existencia);
-        }
-    }
 public:
     Tree(function <bool(T,T)> _criterio, function <void(T)> _print) {
             criterio = _criterio;
@@ -108,10 +96,6 @@ public:
         }
         T* buscar(T e,function<bool(T,T)>existencia) {
             return _buscar(e,start,existencia);
-        }
-
-        bool Exist(T e,function<bool(T,T)>existencia){
-            return _Exist(e,start,existencia);
         }
 };
 

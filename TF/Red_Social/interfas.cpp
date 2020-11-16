@@ -6,10 +6,10 @@ Interfas::Interfas(User*& u,QWidget *parent) :
     ui(new Ui::Interfas)
 {
     ui->setupUi(this);
+
     usuario=u;
 
-
-
+    ui->tbxName->setText(QString::fromStdString(usuario->name));
 }
 
 Interfas::~Interfas()

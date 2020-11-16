@@ -48,7 +48,7 @@ void RedSocial::Login(User u){
         else return false;
     };
 
-    if(usuarios[u.userName].Exist(u,criterio)){
+    if(usuarios[u.userName].buscar(u,criterio)!=nullptr){
         User *us=usuarios[u.userName].buscar(u,criterio);
         QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
         Loged(us);
