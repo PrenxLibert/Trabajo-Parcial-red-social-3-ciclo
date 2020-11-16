@@ -5,17 +5,16 @@
 
 struct User{
     string name;
-    string lastname;
-    string password;
-    short old;
-    string userName;
+    long id;
+    string mail;
+    string date;
     HashTable<User>contactos;
     vector<string>chats;
 
 
-    User(string n,string l,string p,short o,string u):name(n),lastname(l),password(p),old(o),userName(u){
+    User(string n,long _id,string m,string d):name(n),id(_id),mail(m),date(d){
 
-        auto edad = [](User m, User n) {return m.userName > n.userName; };
+        auto edad = [](User m, User n) {return m.name > n.name; };
         auto print = [](User c) {};
         contactos = HashTable<User>(edad,print);
 
