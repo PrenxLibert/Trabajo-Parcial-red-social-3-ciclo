@@ -27,7 +27,7 @@ public:
     }
 
     void cargar(){
-        ifstream archivo("usuarios.txt", std::ios::app);
+        ifstream archivo("usuarios.txt", std::ios::in);
         if(!archivo.fail())
         {
             User temporal_user = User();
