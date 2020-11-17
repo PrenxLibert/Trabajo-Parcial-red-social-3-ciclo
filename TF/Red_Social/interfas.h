@@ -19,6 +19,10 @@ public:
 
 private slots:
 
+    void on_btnEnviar_clicked();
+
+    void on_btnPublic_clicked();
+
 private:
     Ui::Interfas *ui;
     User *usuario;

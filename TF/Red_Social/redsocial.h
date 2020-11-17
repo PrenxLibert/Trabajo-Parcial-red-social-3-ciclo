@@ -1,6 +1,7 @@
 #ifndef REDSOCIAL_H
 #define REDSOCIAL_H
 #include "User.h"
+#include "Coleccion.h"
 
 #include <QMainWindow>
 
@@ -29,6 +30,6 @@ private slots:
 
 private:
     Ui::RedSocial *ui;
-    HashTable<User>usuarios;
+    Coleccion<User> usuarios;
 };
 #endif // REDSOCIAL_H
