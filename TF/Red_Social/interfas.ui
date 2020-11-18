@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
@@ -177,7 +177,7 @@
     <attribute name="title">
      <string>Buscar Amigos</string>
     </attribute>
-    <widget class="QLineEdit" name="lineEdit_7">
+    <widget class="QLineEdit" name="tbxSearch">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -187,7 +187,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btnSearch">
      <property name="geometry">
       <rect>
        <x>470</x>
@@ -200,11 +200,142 @@
       <string>Buscar</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="tab_6">
-    <attribute name="title">
-     <string>Solicitudes</string>
-    </attribute>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>47</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>60</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Mail&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>90</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Date&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="tbxNameF">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="tbxMailF">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>60</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="tbxIdF">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>90</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="tbxDateF">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>90</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>531</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>70</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Follow</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_7">
     <attribute name="title">
@@ -226,8 +357,8 @@
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>60</y>
+       <x>240</x>
+       <y>20</y>
        <width>61</width>
        <height>21</height>
       </rect>
@@ -240,7 +371,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>100</y>
+       <y>50</y>
        <width>41</width>
        <height>16</height>
       </rect>
@@ -252,9 +383,9 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>6</x>
-       <y>140</y>
-       <width>81</width>
+       <x>250</x>
+       <y>50</y>
+       <width>41</width>
        <height>20</height>
       </rect>
      </property>
@@ -281,8 +412,8 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>60</y>
+       <x>300</x>
+       <y>20</y>
        <width>113</width>
        <height>20</height>
       </rect>
@@ -295,7 +426,7 @@
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>100</y>
+       <y>50</y>
        <width>113</width>
        <height>20</height>
       </rect>
@@ -307,11 +438,24 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>140</y>
+       <x>300</x>
+       <y>50</y>
        <width>113</width>
        <height>20</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>521</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>
     </widget>
    </widget>

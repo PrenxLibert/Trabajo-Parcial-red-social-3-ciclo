@@ -16,6 +16,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -38,9 +39,18 @@ public:
     QPushButton *btnVchat;
     QLabel *lblNameF;
     QWidget *tab_5;
-    QLineEdit *lineEdit_7;
-    QPushButton *pushButton_3;
-    QWidget *tab_6;
+    QLineEdit *tbxSearch;
+    QPushButton *btnSearch;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLineEdit *tbxNameF;
+    QLineEdit *tbxMailF;
+    QLineEdit *tbxIdF;
+    QLineEdit *tbxDateF;
+    QTextEdit *textEdit;
+    QPushButton *pushButton;
     QWidget *tab_7;
     QLabel *label;
     QLabel *label_2;
@@ -50,6 +60,7 @@ public:
     QLineEdit *tbxMail;
     QLineEdit *tbxID;
     QLineEdit *tbxDate;
+    QTextBrowser *textBrowser;
 
     void setupUi(QDialog *Interfas)
     {
@@ -108,16 +119,52 @@ public:
         tabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
-        lineEdit_7 = new QLineEdit(tab_5);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-        lineEdit_7->setGeometry(QRect(10, 10, 441, 31));
-        pushButton_3 = new QPushButton(tab_5);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(470, 10, 75, 31));
+        tbxSearch = new QLineEdit(tab_5);
+        tbxSearch->setObjectName(QString::fromUtf8("tbxSearch"));
+        tbxSearch->setGeometry(QRect(10, 10, 441, 31));
+        btnSearch = new QPushButton(tab_5);
+        btnSearch->setObjectName(QString::fromUtf8("btnSearch"));
+        btnSearch->setGeometry(QRect(470, 10, 75, 31));
+        label_6 = new QLabel(tab_5);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(10, 60, 47, 21));
+        label_7 = new QLabel(tab_5);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(30, 90, 21, 21));
+        label_8 = new QLabel(tab_5);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(200, 60, 31, 21));
+        label_9 = new QLabel(tab_5);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(200, 90, 31, 16));
+        tbxNameF = new QLineEdit(tab_5);
+        tbxNameF->setObjectName(QString::fromUtf8("tbxNameF"));
+        tbxNameF->setEnabled(false);
+        tbxNameF->setGeometry(QRect(70, 60, 113, 20));
+        tbxMailF = new QLineEdit(tab_5);
+        tbxMailF->setObjectName(QString::fromUtf8("tbxMailF"));
+        tbxMailF->setEnabled(false);
+        tbxMailF->setGeometry(QRect(240, 60, 113, 20));
+        tbxIdF = new QLineEdit(tab_5);
+        tbxIdF->setObjectName(QString::fromUtf8("tbxIdF"));
+        tbxIdF->setEnabled(false);
+        tbxIdF->setGeometry(QRect(70, 90, 113, 20));
+        tbxDateF = new QLineEdit(tab_5);
+        tbxDateF->setObjectName(QString::fromUtf8("tbxDateF"));
+        tbxDateF->setEnabled(false);
+        tbxDateF->setGeometry(QRect(240, 90, 113, 20));
+        textEdit = new QTextEdit(tab_5);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(10, 120, 531, 271));
+        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        pushButton = new QPushButton(tab_5);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(400, 70, 75, 23));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Arial"));
+        font1.setPointSize(12);
+        pushButton->setFont(font1);
         tabWidget->addTab(tab_5, QString());
-        tab_6 = new QWidget();
-        tab_6->setObjectName(QString::fromUtf8("tab_6"));
-        tabWidget->addTab(tab_6, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
         label = new QLabel(tab_7);
@@ -125,13 +172,13 @@ public:
         label->setGeometry(QRect(30, 20, 61, 21));
         label_2 = new QLabel(tab_7);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(30, 60, 61, 21));
+        label_2->setGeometry(QRect(240, 20, 61, 21));
         label_3 = new QLabel(tab_7);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(50, 100, 41, 16));
+        label_3->setGeometry(QRect(50, 50, 41, 16));
         label_4 = new QLabel(tab_7);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(6, 140, 81, 20));
+        label_4->setGeometry(QRect(250, 50, 41, 20));
         tbxName = new QLineEdit(tab_7);
         tbxName->setObjectName(QString::fromUtf8("tbxName"));
         tbxName->setEnabled(false);
@@ -139,20 +186,24 @@ public:
         tbxMail = new QLineEdit(tab_7);
         tbxMail->setObjectName(QString::fromUtf8("tbxMail"));
         tbxMail->setEnabled(false);
-        tbxMail->setGeometry(QRect(120, 60, 113, 20));
+        tbxMail->setGeometry(QRect(300, 20, 113, 20));
         tbxID = new QLineEdit(tab_7);
         tbxID->setObjectName(QString::fromUtf8("tbxID"));
         tbxID->setEnabled(false);
-        tbxID->setGeometry(QRect(120, 100, 113, 20));
+        tbxID->setGeometry(QRect(120, 50, 113, 20));
         tbxDate = new QLineEdit(tab_7);
         tbxDate->setObjectName(QString::fromUtf8("tbxDate"));
         tbxDate->setEnabled(false);
-        tbxDate->setGeometry(QRect(120, 140, 113, 20));
+        tbxDate->setGeometry(QRect(300, 50, 113, 20));
+        textBrowser = new QTextBrowser(tab_7);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setGeometry(QRect(20, 80, 521, 311));
+        textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tabWidget->addTab(tab_7, QString());
 
         retranslateUi(Interfas);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(Interfas);
@@ -168,9 +219,13 @@ public:
         btnVchat->setText(QCoreApplication::translate("Interfas", "listo", nullptr));
         lblNameF->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("Interfas", "Mensajes", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Interfas", "Buscar", nullptr));
+        btnSearch->setText(QCoreApplication::translate("Interfas", "Buscar", nullptr));
+        label_6->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Name</span></p></body></html>", nullptr));
+        label_7->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">ID</span></p></body></html>", nullptr));
+        label_8->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Mail</span></p></body></html>", nullptr));
+        label_9->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Date</span></p></body></html>", nullptr));
+        pushButton->setText(QCoreApplication::translate("Interfas", "Follow", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QCoreApplication::translate("Interfas", "Buscar Amigos", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_6), QCoreApplication::translate("Interfas", "Solicitudes", nullptr));
         label->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Nombre</span></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Mail</span></p></body></html>", nullptr));
         label_3->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">ID</span></p></body></html>", nullptr));

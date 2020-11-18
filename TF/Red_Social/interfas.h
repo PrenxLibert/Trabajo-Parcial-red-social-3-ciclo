@@ -26,6 +26,8 @@ private slots:
 
     void on_btnVchat_clicked();
 
+    void on_btnSearch_clicked();
+
 private:
     Ui::Interfas *ui;
     User *usuario;

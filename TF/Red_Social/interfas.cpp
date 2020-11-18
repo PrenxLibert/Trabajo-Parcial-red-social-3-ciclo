@@ -68,3 +68,16 @@ void Interfas::on_btnPublic_clicked()
 }
 
 
+
+void Interfas::on_btnSearch_clicked()
+{
+    if(ui->tbxSearch->text()!=""){
+        User aux("",ui->tbxSearch->text().toUInt(),""," ");
+        amigo =usuarios->buscar(aux.id,aux);
+
+        ui->tbxNameF->setText(QString::fromStdString(amigo->name));
+        ui->tbxMailF->setText(QString::fromStdString(amigo->mail));
+        ui->tbxIdF->setText(ui->tbxSearch->text());
+        ui->tbxDateF->setText(QString::fromStdString(amigo->date));
+    }
+}
