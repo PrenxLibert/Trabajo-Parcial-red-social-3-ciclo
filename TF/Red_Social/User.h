@@ -10,6 +10,7 @@ struct User{
     string date;
     HashTable<User>contactos;
     vector<string>chats;
+    vector<string>publicaiones;
 
 
     User(string n,long _id,string m,string d):name(n),id(_id),mail(m),date(d){

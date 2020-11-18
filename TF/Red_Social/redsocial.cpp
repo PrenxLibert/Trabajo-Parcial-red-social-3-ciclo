@@ -7,15 +7,15 @@
 
 RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial){
     ui->setupUi(this);
-    auto edad = [](User m, User n) {return m.name > n.name; };
+    auto nombre = [](User m, User n) {return m.id > n.id; };
 
     auto criterio=[](User a, User b){
-        if(a.mail==b.mail && a.name==b.name){return true;}
+        if(a.id==b.id){return true;}
         else return false;
     };
-    usuarios=Coleccion(edad,criterio);
+    usuarios=Coleccion(nombre,criterio);
     //usuarios.cargar();
-    int i=0;
+    //int i=0;
     string id,email, name,date;
         ifstream lectura("users.tsv");
         while (getline(lectura, id, '\t')) {
@@ -23,7 +23,7 @@ RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial
                   getline(lectura, name, '\t');
                   getline(lectura, date);
                   User u(name,std::stoi(id),email,date);
-                  usuarios.push(name,u);
+                  usuarios.push(id,u);
 
 
         }
@@ -51,7 +51,7 @@ bool RedSocial:: data(){
 
 bool RedSocial:: Ldata(){
     bool validador=false;
-    if(ui->tbxCName->text()!="" && ui->tbxCMail->text()!="")
+    if(ui->tbxCID->text()!="")
         validador=true;
     return validador;
 }
@@ -64,8 +64,8 @@ void RedSocial::Loged(User* u){
 
 void RedSocial::Login(User u){
 
-    if(usuarios.buscar(u.name,u)!=nullptr){
-        User *us=usuarios.buscar(u.name,u);
+    if(usuarios.buscar(u.id,u)!=nullptr){
+        User *us=usuarios.buscar(u.id,u);
         QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
         Loged(us);
 
@@ -78,7 +78,7 @@ void RedSocial::on_btnReg_clicked()
 {
     if(data()){
         User u(ui->tbxName->text().toStdString(),ui->tbxID->text().toULong(),ui->tbxMail->text().toStdString(),ui->tbxDate->text().toStdString());
-        usuarios.push(u.name,u);
+        usuarios.push(ui->tbxID->text().toStdString(),u);
 
         QMessageBox::information(this,tr("Registred"),tr("Usted se ha registrado correctamente"));
         Login(u);
@@ -90,7 +90,7 @@ void RedSocial::on_btnReg_clicked()
 void RedSocial::on_btnLog_clicked()
 {
    if(Ldata()){
-       User u(ui->tbxCName->text().toStdString(),0,ui->tbxCMail->text().toStdString()," ");
+       User u(" ",ui->tbxCID->text().toUInt(),""," ");
        Login(u);
    }
 }

@@ -23,8 +23,11 @@ public:
         cantidad++;
     }
 
-    User* buscar(string name,User dato){
-        return coleccion[name].buscar(dato,busqueda);
+    User* buscar(int id,User dato){
+        stringstream ss;
+        ss << id;
+        string tmp = ss.str();
+        return coleccion[tmp].buscar(dato,busqueda);
     }
 
     void cargar(){

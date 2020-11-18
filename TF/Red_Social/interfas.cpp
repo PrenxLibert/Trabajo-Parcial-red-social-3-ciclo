@@ -26,7 +26,7 @@ Interfas::~Interfas()
 void Interfas::on_btnEnviar_clicked()
 {
     User aux(ui->tbxNameF->text().toStdString(),0,ui->tbxMailF->text().toStdString()," ");
-    User* f =usuarios->buscar(aux.name,aux);
+    User* f =usuarios->buscar(aux.id,aux);
 
     QString tmp;
     tmp= QString::fromStdString(usuario->name) + ":"+ '\n' + ui->tbxNMs->text();
