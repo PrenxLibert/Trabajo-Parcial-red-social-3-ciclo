@@ -21,7 +21,6 @@ class Tree{
 private:
     Nodo<T>* start;
     function<bool(T,T)>criterio;
-    function<void(T)>print;
 
     void _push(T e, Nodo<T>*& aux){
         if(aux==nullptr){
@@ -37,7 +36,7 @@ private:
         if (aux == nullptr)return;
         else {
              _EnOrden(aux->L);
-             print(aux->val);
+             //print(aux->val);
              _EnOrden(aux->R);
         }
     }
@@ -45,7 +44,7 @@ private:
     void _PreOrden(Nodo<T>* aux) {
         if (aux == nullptr)return;
         else {
-            print(aux->val);
+            //print(aux->val);
             _PreOrden(aux->L);
             _PreOrden(aux->R);
         }
@@ -56,7 +55,7 @@ private:
         else {
             _PostOrden(aux->L);
             _PostOrden(aux->R);
-            print(aux->val);
+            //print(aux->val);
         }
     }
     T* _buscar(T e,Nodo<T>*aux,function<bool(T,T)>existencia) {
@@ -73,9 +72,8 @@ private:
     }
 
 public:
-    Tree(function <bool(T,T)> _criterio, function <void(T)> _print) {
+    Tree(function <bool(T,T)> _criterio) {
             criterio = _criterio;
-            print = _print;
             start = nullptr;
         }
 

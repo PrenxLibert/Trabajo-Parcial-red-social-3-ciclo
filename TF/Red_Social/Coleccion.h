@@ -4,41 +4,39 @@
 #include "HashTable.h"
 #include "User.h"
 
-template <typename t>
 
 class Coleccion{
 private:
-    HashTable<t>coleccion;
+    HashTable<User>coleccion;
     size_t cantidad;
 public:
-    Coleccion(function<bool(t, t)> criterio, function <void(t)> print){
-        coleccion=HashTable<t>(criterio,print);
+    Coleccion(function<bool(User, User)> criterio){
+        coleccion=HashTable<User>(criterio);
         cantidad=0;
     }
     Coleccion(){}
 
-    void push(string name,t dato){
+    void push(string name,User dato){
         coleccion[name].push(dato);
         cantidad++;
     }
 
-    t* buscar(string name,t dato,function<bool(t, t)> criterio){
+    User* buscar(string name,User dato,function<bool(User, User)> criterio){
         return coleccion[name].buscar(dato,criterio);
     }
 
     void cargar(){
-        ifstream archivo("usuarios.txt", std::ios::in);
-        if(!archivo.fail())
-        {
-            User temporal_user = User();
-
-            while(!archivo.eof())
-            {
-
+        string id,email, name,date;
+            ifstream lectura("users.tsv");
+            while (getline(lectura, id, '\t')) {
+                      getline(lectura, email, '\t');
+                      getline(lectura, name, '\t');
+                      getline(lectura, date);
+                      User u(name,std::stoi(id),email,date);
+                      push(name,u);
 
             }
-            archivo.close();
-        }
+            lectura.close();
     }
 };
 

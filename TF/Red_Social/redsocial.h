@@ -30,6 +30,6 @@ private slots:
 
 private:
     Ui::RedSocial *ui;
-    Coleccion<User> usuarios;
+    Coleccion usuarios;
 };
 #endif // REDSOCIAL_H

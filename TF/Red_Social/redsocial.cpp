@@ -2,13 +2,28 @@
 #include "ui_redsocial.h"
 #include "interfas.h"
 #include "Library.h"
+#include <QFile>
+#include <fstream>
 
 RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial){
     ui->setupUi(this);
     auto edad = [](User m, User n) {return m.name > n.name; };
-    auto print = [](User c) {};
-    usuarios=Coleccion<User>(edad,print);
-    usuarios.cargar();
+    usuarios=Coleccion(edad);
+    //usuarios.cargar();
+    int i=0;
+    string id,email, name,date;
+        ifstream lectura("users.tsv");
+        while (getline(lectura, id, '\t')) {
+                  getline(lectura, email, '\t');
+                  getline(lectura, name, '\t');
+                  getline(lectura, date);
+                  User u(name,std::stoi(id),email,date);
+                  usuarios.push(name,u);
+
+
+        }
+        lectura.close();
+
 }
 
 RedSocial::~RedSocial()

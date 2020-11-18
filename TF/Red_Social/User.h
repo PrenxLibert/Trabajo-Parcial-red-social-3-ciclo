@@ -5,7 +5,7 @@
 
 struct User{
     string name;
-    long id;
+    int id;
     string mail;
     string date;
     HashTable<User>contactos;
@@ -15,8 +15,7 @@ struct User{
     User(string n,long _id,string m,string d):name(n),id(_id),mail(m),date(d){
 
         auto edad = [](User m, User n) {return m.name > n.name; };
-        auto print = [](User c) {};
-        contactos = HashTable<User>(edad,print);
+        contactos = HashTable<User>(edad);
 
     }
     User(){}
