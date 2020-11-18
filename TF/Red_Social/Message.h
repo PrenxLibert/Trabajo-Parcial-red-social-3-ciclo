@@ -4,7 +4,11 @@
 #include "Library.h"
 
 struct Mensaje{
+    int IdU;
+    int IdF;
+    string msj;
 
+    Mensaje(int u,int f,string sms):IdU(u),IdF(f),msj(sms){}
 };
 
 

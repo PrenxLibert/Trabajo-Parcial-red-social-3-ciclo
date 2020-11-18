@@ -2,6 +2,7 @@
 #define USER_H
 
 #include"HashTable.h"
+#include"Message.h"
 
 struct User{
     string name;
@@ -9,7 +10,7 @@ struct User{
     string mail;
     string date;
     HashTable<User>contactos;
-    vector<string>chats;
+    vector<Mensaje>chats;
     vector<string>publicaiones;
 
 
@@ -23,18 +24,6 @@ struct User{
 
     void addFriends(User u){
         contactos[u.name].push(u);
-    }
-
-    void ReadChat() {
-        for (unsigned int i = 0; i < chats.size(); ++i) {
-            cout << chats[i]<<endl;
-        }
-    }
-
-    void sendChat(User& c,string sms) {
-        sms = name + ":" + sms;
-        chats.push_back(sms);
-        c.chats.push_back(sms);
     }
 
     void getFriends(string nombre) {

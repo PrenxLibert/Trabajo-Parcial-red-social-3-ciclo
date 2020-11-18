@@ -24,9 +24,12 @@ private slots:
 
     void on_btnPublic_clicked();
 
+    void on_btnVchat_clicked();
+
 private:
     Ui::Interfas *ui;
     User *usuario;
+    User *amigo;
     Coleccion* usuarios;
 };
 
