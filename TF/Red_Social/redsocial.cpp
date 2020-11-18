@@ -8,7 +8,12 @@
 RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial){
     ui->setupUi(this);
     auto edad = [](User m, User n) {return m.name > n.name; };
-    usuarios=Coleccion(edad);
+
+    auto criterio=[](User a, User b){
+        if(a.mail==b.mail && a.name==b.name){return true;}
+        else return false;
+    };
+    usuarios=Coleccion(edad,criterio);
     //usuarios.cargar();
     int i=0;
     string id,email, name,date;
@@ -53,19 +58,14 @@ bool RedSocial:: Ldata(){
 
 void RedSocial::Loged(User* u){
 
-    Interfas *it= new Interfas(u,this);
+    Interfas *it= new Interfas(u,&usuarios,this);
     it->show();
 }
 
 void RedSocial::Login(User u){
 
-    auto criterio=[](User a, User b){
-        if(a.mail==b.mail && a.name==b.name){return true;}
-        else return false;
-    };
-
-    if(usuarios.buscar(u.name,u,criterio)!=nullptr){
-        User *us=usuarios.buscar(u.name,u,criterio);
+    if(usuarios.buscar(u.name,u)!=nullptr){
+        User *us=usuarios.buscar(u.name,u);
         QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
         Loged(us);
 

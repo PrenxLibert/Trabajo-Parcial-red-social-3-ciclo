@@ -33,6 +33,10 @@ public:
     QTextEdit *tbxMsj;
     QLineEdit *tbxNMs;
     QPushButton *btnEnviar;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLineEdit *tbxNameF;
+    QLineEdit *tbxMailF;
     QWidget *tab_5;
     QLineEdit *lineEdit_7;
     QPushButton *pushButton_3;
@@ -88,6 +92,18 @@ public:
         btnEnviar = new QPushButton(tab_4);
         btnEnviar->setObjectName(QString::fromUtf8("btnEnviar"));
         btnEnviar->setGeometry(QRect(450, 380, 75, 23));
+        label_5 = new QLabel(tab_4);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(20, 70, 41, 16));
+        label_6 = new QLabel(tab_4);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(30, 130, 31, 21));
+        tbxNameF = new QLineEdit(tab_4);
+        tbxNameF->setObjectName(QString::fromUtf8("tbxNameF"));
+        tbxNameF->setGeometry(QRect(70, 70, 113, 20));
+        tbxMailF = new QLineEdit(tab_4);
+        tbxMailF->setObjectName(QString::fromUtf8("tbxMailF"));
+        tbxMailF->setGeometry(QRect(70, 130, 113, 20));
         tabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
@@ -147,6 +163,8 @@ public:
         btnPublic->setText(QCoreApplication::translate("Interfas", "Publicar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Interfas", "Principal", nullptr));
         btnEnviar->setText(QCoreApplication::translate("Interfas", "Enviar", nullptr));
+        label_5->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Name</span></p></body></html>", nullptr));
+        label_6->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Mail</span></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("Interfas", "Mensajes", nullptr));
         pushButton_3->setText(QCoreApplication::translate("Interfas", "Buscar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QCoreApplication::translate("Interfas", "Buscar Amigos", nullptr));

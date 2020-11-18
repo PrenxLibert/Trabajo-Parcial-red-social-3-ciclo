@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "Library.h"
 #include "User.h"
+#include "Coleccion.h"
 
 namespace Ui {
 class Interfas;
@@ -14,7 +15,7 @@ class Interfas : public QDialog
     Q_OBJECT
 
 public:
-    explicit Interfas(User*& u,QWidget *parent = nullptr);
+    explicit Interfas(User*& u,Coleccion* usuarios,QWidget *parent = nullptr);
     ~Interfas();
 
 private slots:
@@ -26,6 +27,7 @@ private slots:
 private:
     Ui::Interfas *ui;
     User *usuario;
+    Coleccion* usuarios;
 };
 
 #endif // INTERFAS_H

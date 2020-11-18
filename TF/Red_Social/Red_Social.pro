@@ -33,4 +33,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     ../../../../algoritmia/TF pruebas/build-Red_Social-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/usuarios.txt \
-    ../../../../algoritmia/TF pruebas/build-Red_Social-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/usuarios.txt
+    ../../../../algoritmia/TF pruebas/build-Red_Social-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/usuarios.txt \
+    users.tsv

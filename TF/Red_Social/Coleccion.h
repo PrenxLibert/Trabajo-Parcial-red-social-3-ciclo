@@ -9,10 +9,12 @@ class Coleccion{
 private:
     HashTable<User>coleccion;
     size_t cantidad;
+    function<bool(User, User)> busqueda;
 public:
-    Coleccion(function<bool(User, User)> criterio){
+    Coleccion(function<bool(User, User)> criterio,function<bool(User, User)> _busqueda){
         coleccion=HashTable<User>(criterio);
         cantidad=0;
+        busqueda=_busqueda;
     }
     Coleccion(){}
 
@@ -21,8 +23,8 @@ public:
         cantidad++;
     }
 
-    User* buscar(string name,User dato,function<bool(User, User)> criterio){
-        return coleccion[name].buscar(dato,criterio);
+    User* buscar(string name,User dato){
+        return coleccion[name].buscar(dato,busqueda);
     }
 
     void cargar(){
