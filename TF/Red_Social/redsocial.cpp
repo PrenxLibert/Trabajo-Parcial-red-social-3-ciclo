@@ -1,12 +1,14 @@
 #include "redsocial.h"
 #include "ui_redsocial.h"
 #include "interfas.h"
+#include "Library.h"
 
 RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial){
     ui->setupUi(this);
     auto edad = [](User m, User n) {return m.name > n.name; };
     auto print = [](User c) {};
-    usuarios=HashTable<User>(edad,print);
+    usuarios=Coleccion<User>(edad,print);
+    usuarios.cargar();
 }
 
 RedSocial::~RedSocial()
@@ -47,8 +49,8 @@ void RedSocial::Login(User u){
         else return false;
     };
 
-    if(usuarios[u.name].buscar(u,criterio)!=nullptr){
-        User *us=usuarios[u.name].buscar(u,criterio);
+    if(usuarios.buscar(u.name,u,criterio)!=nullptr){
+        User *us=usuarios.buscar(u.name,u,criterio);
         QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
         Loged(us);
 
@@ -61,7 +63,7 @@ void RedSocial::on_btnReg_clicked()
 {
     if(data()){
         User u(ui->tbxName->text().toStdString(),ui->tbxID->text().toULong(),ui->tbxMail->text().toStdString(),ui->tbxDate->text().toStdString());
-        usuarios[u.name].push(u);
+        usuarios.push(u.name,u);
 
         QMessageBox::information(this,tr("Registred"),tr("Usted se ha registrado correctamente"));
         Login(u);

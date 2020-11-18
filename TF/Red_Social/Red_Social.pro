@@ -14,6 +14,7 @@ SOURCES += \
     redsocial.cpp
 
 HEADERS += \
+    Coleccion.h \
     HashTable.h \
     Library.h \
     Tree.h \
@@ -29,3 +30,7 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    ../../../../algoritmia/TF pruebas/build-Red_Social-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/usuarios.txt \
+    ../../../../algoritmia/TF pruebas/build-Red_Social-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/usuarios.txt
