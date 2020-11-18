@@ -16,7 +16,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -49,7 +48,7 @@ public:
     QLineEdit *tbxMailF;
     QLineEdit *tbxIdF;
     QLineEdit *tbxDateF;
-    QTextEdit *textEdit;
+    QTextEdit *tbxPublicF;
     QPushButton *pushButton;
     QWidget *tab_7;
     QLabel *label;
@@ -60,7 +59,7 @@ public:
     QLineEdit *tbxMail;
     QLineEdit *tbxID;
     QLineEdit *tbxDate;
-    QTextBrowser *textBrowser;
+    QTextEdit *textEdit;
 
     void setupUi(QDialog *Interfas)
     {
@@ -153,10 +152,10 @@ public:
         tbxDateF->setObjectName(QString::fromUtf8("tbxDateF"));
         tbxDateF->setEnabled(false);
         tbxDateF->setGeometry(QRect(240, 90, 113, 20));
-        textEdit = new QTextEdit(tab_5);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(10, 120, 531, 271));
-        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        tbxPublicF = new QTextEdit(tab_5);
+        tbxPublicF->setObjectName(QString::fromUtf8("tbxPublicF"));
+        tbxPublicF->setGeometry(QRect(10, 120, 531, 271));
+        tbxPublicF->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         pushButton = new QPushButton(tab_5);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(400, 70, 75, 23));
@@ -195,15 +194,14 @@ public:
         tbxDate->setObjectName(QString::fromUtf8("tbxDate"));
         tbxDate->setEnabled(false);
         tbxDate->setGeometry(QRect(300, 50, 113, 20));
-        textBrowser = new QTextBrowser(tab_7);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(20, 80, 521, 311));
-        textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        textEdit = new QTextEdit(tab_7);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(20, 80, 511, 301));
         tabWidget->addTab(tab_7, QString());
 
         retranslateUi(Interfas);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Interfas);

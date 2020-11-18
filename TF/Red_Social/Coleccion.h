@@ -38,7 +38,8 @@ public:
                       getline(lectura, name, '\t');
                       getline(lectura, date);
                       User u(name,std::stoi(id),email,date);
-                      push(name,u);
+                      push(id,u);
+
 
             }
             lectura.close();

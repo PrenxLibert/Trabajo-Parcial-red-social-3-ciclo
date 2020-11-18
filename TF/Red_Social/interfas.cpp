@@ -1,6 +1,7 @@
 #include "interfas.h"
 #include "ui_interfas.h"
 #include "Message.h"
+#include "Publicaciones.h"
 
 Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
     QDialog(parent),
@@ -10,6 +11,17 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
 
     usuario=u;
     this->usuarios=usuarios;
+
+    auto idu = [](Publicacion m, Publicacion n) {return m.idU > n.idU; };
+
+    auto criterio=[](Publicacion a, Publicacion b){
+        if(a.idU==b.idU){return true;}
+        else return false;
+    };
+
+    publicaciones = Publicaciones(idu,criterio);
+    publicaciones.cargar();
+
 
     ui->tbxName->setText(QString::fromStdString(usuario->name));
     ui->tbxMail->setText(QString::fromStdString(usuario->mail));
@@ -67,10 +79,18 @@ void Interfas::on_btnPublic_clicked()
     ui->tbxNPublic->setText("");
 }
 
+void Interfas::cargaPublic(){
+    Publicacion auxp(0,amigo->id,"","","",0);
+    Publicacion* p=publicaciones.buscar(auxp.idU,auxp);
 
+    ui->tbxPublicF->append(QString::fromStdString(p->name));
+    ui->tbxPublicF->append(QString::fromStdString(p->twet));
+    ui->tbxPublicF->append(QString::fromStdString(p->date));
+}
 
 void Interfas::on_btnSearch_clicked()
 {
+    ui->tbxPublicF->setText("");
     if(ui->tbxSearch->text()!=""){
         User aux("",ui->tbxSearch->text().toUInt(),""," ");
         amigo =usuarios->buscar(aux.id,aux);
@@ -79,5 +99,12 @@ void Interfas::on_btnSearch_clicked()
         ui->tbxMailF->setText(QString::fromStdString(amigo->mail));
         ui->tbxIdF->setText(ui->tbxSearch->text());
         ui->tbxDateF->setText(QString::fromStdString(amigo->date));
+
+        ui->tbxPublicF->append(QString::fromStdString(amigo->name));
+
+        cargaPublic();
     }
+
+
+
 }

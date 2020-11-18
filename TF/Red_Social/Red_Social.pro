@@ -18,6 +18,8 @@ HEADERS += \
     HashTable.h \
     Library.h \
     Message.h \
+    Publicacion.h \
+    Publicaciones.h \
     Tree.h \
     User.h \
     interfas.h \

@@ -14,21 +14,7 @@ RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial
         else return false;
     };
     usuarios=Coleccion(nombre,criterio);
-    //usuarios.cargar();
-    //int i=0;
-    string id,email, name,date;
-        ifstream lectura("users.tsv");
-        while (getline(lectura, id, '\t')) {
-                  getline(lectura, email, '\t');
-                  getline(lectura, name, '\t');
-                  getline(lectura, date);
-                  User u(name,std::stoi(id),email,date);
-                  usuarios.push(id,u);
-
-
-        }
-        lectura.close();
-
+    usuarios.cargar();
 }
 
 RedSocial::~RedSocial()
