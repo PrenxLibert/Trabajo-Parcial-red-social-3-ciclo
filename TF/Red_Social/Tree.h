@@ -32,12 +32,15 @@ private:
         }
     }
 
-    void _EnOrden(Nodo<T>*& aux){
+    void _EnOrden(Nodo<T>*& aux,function<void(T)>print,int cant,int i){
         if (aux == nullptr)return;
         else {
-             _EnOrden(aux->L);
-             //print(aux->val);
-             _EnOrden(aux->R);
+            if(++i<5){
+             _EnOrden(aux->L,print,cant,i);
+
+             print(aux->val);
+             _EnOrden(aux->R,print,cant,i);
+            }
         }
     }
 
@@ -75,14 +78,16 @@ public:
     Tree(function <bool(T,T)> _criterio) {
             criterio = _criterio;
             start = nullptr;
-        }
+    }
+    Tree(){}
 
         void push(T h) {
             _push(h, start);
         }
 
-        void EnOrden() {
-            _EnOrden(start);
+        void EnOrden(function<void(T)>print,int cant) {
+            int i=0;
+            _EnOrden(start,print,cant,i);
         }
 
         void PreOrden() {

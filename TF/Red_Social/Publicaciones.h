@@ -5,27 +5,28 @@
 
 class Publicaciones{
 private:
-    HashTable<Publicacion>coleccion;
+    Tree<Publicacion>coleccion;
     size_t cantidad;
     function<bool(Publicacion, Publicacion)> busqueda;
 public:
     Publicaciones(function<bool(Publicacion, Publicacion)> criterio,function<bool(Publicacion, Publicacion)> _busqueda){
-        coleccion=HashTable<Publicacion>(criterio);
+        coleccion=Tree<Publicacion>(criterio);
         cantidad=0;
         busqueda=_busqueda;
     }
     Publicaciones(){}
 
-    void push(string name,Publicacion dato){
-        coleccion[name].push(dato);
+    void push(Publicacion dato){
+        coleccion.push(dato);
         cantidad++;
     }
 
-    Publicacion* buscar(int id,Publicacion dato){
-        stringstream ss;
-        ss << id;
-        string tmp = ss.str();
-        return coleccion[tmp].buscar(dato,busqueda);
+    Publicacion* buscar(Publicacion dato){
+        return coleccion.buscar(dato,busqueda);
+    }
+
+    void print(function<void(Publicacion)>_print,int cant){
+        coleccion.EnOrden(_print,cant);
     }
 
     void cargar(){
@@ -39,7 +40,7 @@ public:
                       getline(lectura, date, '\t');
                       getline(lectura, pubdate);
                       Publicacion p ( stoi(id), stoi(idU), twet, name, date,stoi( pubdate));
-                      push(idU,p);
+                      push(p);
 
 
             }

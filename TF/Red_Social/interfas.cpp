@@ -81,7 +81,7 @@ void Interfas::on_btnPublic_clicked()
 
 void Interfas::cargaPublic(){
     Publicacion auxp(0,amigo->id,"","","",0);
-    Publicacion* p=publicaciones.buscar(auxp.idU,auxp);
+    Publicacion* p=publicaciones.buscar(auxp);
 
     ui->tbxPublicF->append(QString::fromStdString(p->name));
     ui->tbxPublicF->append(QString::fromStdString(p->twet));
@@ -111,23 +111,25 @@ void Interfas::on_btnSearch_clicked()
 
 void Interfas::on_btnOlikes_clicked(){
     ui->tbxPublic->setText("");
-    Publicacion* p;
-    stringstream ss;
-    string tmp;
-    for(int i=1+(50*cant);i<=50+(50*cant);++i){
-        Publicacion auxp(0,i,"","","",0);
-        p=publicaciones.buscar(auxp.idU,auxp);
 
+    auto print=[=](Publicacion p){
+
+        Interfas::ui->tbxPublic->append(QString::fromStdString(p.name));
+        Interfas::ui->tbxPublic->append(QString::fromStdString(p.twet));
+        Interfas::ui->tbxPublic->append(QString::fromStdString(p.date));
+        Interfas::ui->tbxPublic->append("");
+        Interfas::ui->tbxPublic->append("");
+
+    };
+
+    publicaciones.print(print,50);
+
+}
+
+/*
+        stringstream ss;
+        string tmp;
         ss << p->idU;
         tmp = ss.str();
-
-        ui->tbxPublic->append("ID: "+ QString::fromStdString(tmp));
-        ui->tbxPublic->append(QString::fromStdString(p->name));
-        ui->tbxPublic->append(QString::fromStdString(p->twet));
-        ui->tbxPublic->append(QString::fromStdString(p->date));
-        ui->tbxPublic->append("");
-        ui->tbxPublic->append("");
-    }
-    cant++;
-    if(cant>19)cant=0;
-}
+        Interfas::ui->tbxPublic->append("ID: "+ QString::fromStdString(tmp));
+*/

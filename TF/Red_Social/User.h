@@ -26,9 +26,9 @@ struct User{
         contactos[u.name].push(u);
     }
 
-    void getFriends(string nombre) {
+   /* void getFriends(string nombre) {
         contactos[nombre].EnOrden();
-    }
+    }*/
 };
 
 #endif // USER_H
