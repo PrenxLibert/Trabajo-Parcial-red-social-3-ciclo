@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>614</width>
-    <height>472</height>
+    <height>514</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,11 +19,11 @@
      <x>26</x>
      <y>19</y>
      <width>561</width>
-     <height>431</height>
+     <height>481</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
@@ -64,13 +64,85 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>80</y>
+       <y>120</y>
        <width>531</width>
-       <height>311</height>
+       <height>271</height>
       </rect>
      </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnOlikes">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Likes</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Ordenar por:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>400</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID Publicacion</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>420</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>420</y>
+       <width>321</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>420</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Comentar</string>
      </property>
     </widget>
    </widget>

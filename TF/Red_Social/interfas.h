@@ -31,12 +31,15 @@ private slots:
 
     void on_btnSearch_clicked();
 
+    void on_btnOlikes_clicked();
+
 private:
     Ui::Interfas *ui;
     User *usuario;
     User *amigo;
     Coleccion* usuarios;
     Publicaciones publicaciones;
+    int cant;
 };
 
 #endif // INTERFAS_H

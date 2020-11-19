@@ -27,7 +27,7 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
     ui->tbxMail->setText(QString::fromStdString(usuario->mail));
     ui->tbxID->setText(QString::number(usuario->id));
     ui->tbxDate->setText(QString::fromStdString(usuario->date));
-
+    cant=0;
 }
 
 Interfas::~Interfas()
@@ -107,4 +107,27 @@ void Interfas::on_btnSearch_clicked()
 
 
 
+}
+
+void Interfas::on_btnOlikes_clicked(){
+    ui->tbxPublic->setText("");
+    Publicacion* p;
+    stringstream ss;
+    string tmp;
+    for(int i=1+(50*cant);i<=50+(50*cant);++i){
+        Publicacion auxp(0,i,"","","",0);
+        p=publicaciones.buscar(auxp.idU,auxp);
+
+        ss << p->idU;
+        tmp = ss.str();
+
+        ui->tbxPublic->append("ID: "+ QString::fromStdString(tmp));
+        ui->tbxPublic->append(QString::fromStdString(p->name));
+        ui->tbxPublic->append(QString::fromStdString(p->twet));
+        ui->tbxPublic->append(QString::fromStdString(p->date));
+        ui->tbxPublic->append("");
+        ui->tbxPublic->append("");
+    }
+    cant++;
+    if(cant>19)cant=0;
 }
