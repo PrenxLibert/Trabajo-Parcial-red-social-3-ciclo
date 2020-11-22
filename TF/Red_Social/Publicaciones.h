@@ -17,6 +17,7 @@ public:
     Publicaciones(){}
 
     void push(Publicacion dato){
+        dato.id=cantidad+1;
         coleccion.push(dato);
         cantidad++;
     }

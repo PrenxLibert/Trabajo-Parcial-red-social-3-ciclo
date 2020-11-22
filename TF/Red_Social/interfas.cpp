@@ -98,7 +98,7 @@ void Interfas::cargaPublic(){
     Publicacion auxp(0,amigo->id,"","","",0);
     Publicacion* p=publicaciones.buscar(auxp);
 
-    ss << p->idU;
+    ss << p->id;
     tmp = ss.str();
 
     ui->tbxPublicF->append(QString::fromStdString(tmp));
