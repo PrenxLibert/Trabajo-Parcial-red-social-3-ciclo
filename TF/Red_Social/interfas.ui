@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
@@ -517,7 +517,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="tbxMPublic">
      <property name="geometry">
       <rect>
        <x>20</x>

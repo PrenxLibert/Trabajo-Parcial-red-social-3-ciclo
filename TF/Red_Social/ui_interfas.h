@@ -65,7 +65,7 @@ public:
     QLineEdit *tbxMail;
     QLineEdit *tbxID;
     QLineEdit *tbxDate;
-    QTextEdit *textEdit;
+    QTextEdit *tbxMPublic;
 
     void setupUi(QDialog *Interfas)
     {
@@ -218,14 +218,14 @@ public:
         tbxDate->setObjectName(QString::fromUtf8("tbxDate"));
         tbxDate->setEnabled(false);
         tbxDate->setGeometry(QRect(300, 50, 113, 20));
-        textEdit = new QTextEdit(tab_7);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(20, 80, 511, 301));
+        tbxMPublic = new QTextEdit(tab_7);
+        tbxMPublic->setObjectName(QString::fromUtf8("tbxMPublic"));
+        tbxMPublic->setGeometry(QRect(20, 80, 511, 301));
         tabWidget->addTab(tab_7, QString());
 
         retranslateUi(Interfas);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(Interfas);

@@ -46,6 +46,12 @@ public:
             }
             lectura.close();
     }
+    //
+    void saved(Publicacion u){
+        ofstream escritura("publications.tsv",ios::app);
+        escritura<<1001<< '\t'<<1001<<'\t' <<u.idU<< '\t'<< u.twet +'\t'+u.name+'\t' +u.date<<'\t'<< u.pubdate<<'\n';
+        escritura.close();
+    }
 };
 
 #endif // PUBLICACIONES_H
