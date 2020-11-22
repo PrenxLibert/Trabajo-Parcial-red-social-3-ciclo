@@ -67,6 +67,7 @@ void RedSocial::on_btnReg_clicked()
         usuarios.push(ui->tbxID->text().toStdString(),u);
 
         QMessageBox::information(this,tr("Registred"),tr("Usted se ha registrado correctamente"));
+        usuarios.saved(u);
         Login(u);
     }
 }

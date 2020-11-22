@@ -44,6 +44,11 @@ public:
             }
             lectura.close();
     }
+    void saved(User u){
+        ofstream escritura("users.tsv",ios::app);
+        escritura<<u.id<< '\t' + u.mail +'\t' +u.name+'\t'+u.date+'\n';
+        escritura.close();
+    }
 };
 
 #endif // COLECCION_H
