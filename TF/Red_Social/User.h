@@ -11,8 +11,6 @@ struct User{
     string date;
     HashTable<User>contactos;
     vector<Mensaje>chats;
-    vector<string>publicaiones;
-
 
     User(string n,long _id,string m,string d):name(n),id(_id),mail(m),date(d){
 
@@ -26,9 +24,6 @@ struct User{
         contactos[u.name].push(u);
     }
 
-   /* void getFriends(string nombre) {
-        contactos[nombre].EnOrden();
-    }*/
 };
 
 #endif // USER_H

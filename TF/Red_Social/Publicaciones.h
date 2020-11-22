@@ -40,7 +40,7 @@ public:
                       getline(lectura, name, '\t');
                       getline(lectura, date, '\t');
                       getline(lectura, pubdate);
-                      Publicacion p ( stoi(id), stoi(idU), twet, name, date,stoi( pubdate));
+                      Publicacion p ( stoi(id), stoi(idU), twet, name, date,stoi(pubdate));
                       push(p);
 
 

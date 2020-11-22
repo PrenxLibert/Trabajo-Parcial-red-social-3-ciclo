@@ -38,7 +38,8 @@ private:
     User *usuario;
     User *amigo;
     Coleccion* usuarios;
-    Publicaciones publicaciones;
+    Publicaciones publicacionesU;
+    Publicaciones publicacionesL;
     int cant;
 };
 

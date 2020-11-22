@@ -11,17 +11,27 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
 
     usuario=u;
     this->usuarios=usuarios;
+//##########################################################################
+    auto IDU = [](Publicacion m, Publicacion n) {return m.idU > n.idU; };
 
-    auto idu = [](Publicacion m, Publicacion n) {return m.idU > n.idU; };
-
-    auto criterio=[](Publicacion a, Publicacion b){
+    auto existenciaU=[](Publicacion a, Publicacion b){
         if(a.idU==b.idU){return true;}
         else return false;
     };
 
-    publicaciones = Publicaciones(idu,criterio);
-    publicaciones.cargar();
+    publicacionesU = Publicaciones(IDU,existenciaU);
+    publicacionesU.cargar();
+//###########################################################################
 
+    auto likes = [](Publicacion m, Publicacion n) {return m.pubdate > n.pubdate; };
+
+    auto existenciaL=[](Publicacion a, Publicacion b){
+        if(a.pubdate==b.pubdate){return true;}
+        else return false;
+    };
+
+    publicacionesL = Publicaciones(likes,existenciaL);
+    publicacionesL.cargar();
 
     ui->tbxName->setText(QString::fromStdString(usuario->name));
     ui->tbxMail->setText(QString::fromStdString(usuario->mail));
@@ -29,8 +39,8 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
     ui->tbxDate->setText(QString::fromStdString(usuario->date));
     cant=0;
 
-    Publicacion auxp(0,usuario->id,"","","",0);
-    Publicacion* p=publicaciones.buscar(auxp);
+    Publicacion auxp(usuario->id,usuario->id,"","","",usuario->id);
+    Publicacion* p=publicacionesU.buscar(auxp);
 
     ui->tbxMPublic->append(QString::fromStdString(p->name));
     ui->tbxMPublic->append(QString::fromStdString(p->twet));
@@ -88,7 +98,7 @@ void Interfas::on_btnPublic_clicked()
     ui->tbxPublic->append(QString::fromStdString(aux.name));
     ui->tbxPublic->append(QString::fromStdString(aux.twet));
     ui->tbxPublic->append(QString::fromStdString(aux.date));
-    publicaciones.saved(aux);
+    publicacionesU.saved(aux);
 }
 
 void Interfas::cargaPublic(){
@@ -96,7 +106,7 @@ void Interfas::cargaPublic(){
     string tmp;
 
     Publicacion auxp(0,amigo->id,"","","",0);
-    Publicacion* p=publicaciones.buscar(auxp);
+    Publicacion* p=publicacionesU.buscar(auxp);
 
     ss << p->id;
     tmp = ss.str();
@@ -133,7 +143,7 @@ void Interfas::on_btnOlikes_clicked(){
     auto print=[=](Publicacion p){
         stringstream ss;
         string tmp;
-        ss << p.id;
+        ss << p.pubdate;
         tmp = ss.str();
 
         Interfas::ui->tbxPublic->append(QString::fromStdString(tmp));
@@ -145,7 +155,7 @@ void Interfas::on_btnOlikes_clicked(){
 
     };
 
-    publicaciones.print(print,50);
+    publicacionesL.print(print,50);
 
 }
 

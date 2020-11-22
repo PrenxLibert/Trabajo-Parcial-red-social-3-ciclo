@@ -35,12 +35,12 @@ private:
     void _EnOrden(Nodo<T>*& aux,function<void(T)>print,int cant,int i){
         if (aux == nullptr)return;
         else {
-            if(++i<5){
+            //if(++i<5){
              _EnOrden(aux->L,print,cant,i);
 
              print(aux->val);
              _EnOrden(aux->R,print,cant,i);
-            }
+           // }
         }
     }
 
