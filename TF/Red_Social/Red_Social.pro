@@ -32,6 +32,7 @@ HEADERS += \
     redsocial.h
 
 FORMS += \
+    Vizualizar.ui \
     interfas.ui \
     redsocial.ui
 
