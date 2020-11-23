@@ -192,10 +192,14 @@ void Interfas::on_btnMFollow_clicked()
     };
     followers.print(print,50);
 }
+void Interfas::on_btnComentar_clicked()
+{
+    QString tmp;
+    tmp=ui->tbxNComment->text();
+    ui->tbxComentarios->append(tmp);
+    ui->tbxNComment->setText("");
 
-/*
-}*/
-
+}
 /*
         stringstream ss;
         string tmp;
@@ -203,3 +207,5 @@ void Interfas::on_btnMFollow_clicked()
         tmp = ss.str();
         Interfas::ui->tbxPublic->append("ID: "+ QString::fromStdString(tmp));
 */
+
+

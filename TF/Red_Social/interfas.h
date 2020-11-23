@@ -38,6 +38,8 @@ private slots:
 
     void on_btnMFollow_clicked();
 
+    void on_btnComentar_clicked();
+
 private:
     Ui::Interfas *ui;
     User *usuario;
