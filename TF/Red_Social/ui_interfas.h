@@ -32,9 +32,10 @@ public:
     QPushButton *btnOlikes;
     QLabel *label_10;
     QLabel *label_11;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QPushButton *pushButton_2;
+    QLineEdit *tbxCID;
+    QLineEdit *tbxNComment;
+    QPushButton *btnComentar;
+    QTextEdit *tbxComentarios;
     QWidget *tab_4;
     QTextEdit *tbxMsj;
     QLineEdit *tbxNMs;
@@ -74,7 +75,7 @@ public:
     {
         if (Interfas->objectName().isEmpty())
             Interfas->setObjectName(QString::fromUtf8("Interfas"));
-        Interfas->resize(614, 514);
+        Interfas->resize(614, 528);
         tabWidget = new QTabWidget(Interfas);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(26, 19, 561, 481));
@@ -94,7 +95,7 @@ public:
         btnPublic->setFont(font);
         tbxPublic = new QTextEdit(tab_3);
         tbxPublic->setObjectName(QString::fromUtf8("tbxPublic"));
-        tbxPublic->setGeometry(QRect(10, 120, 531, 271));
+        tbxPublic->setGeometry(QRect(90, 70, 451, 221));
         tbxPublic->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         btnOlikes = new QPushButton(tab_3);
         btnOlikes->setObjectName(QString::fromUtf8("btnOlikes"));
@@ -105,15 +106,19 @@ public:
         label_11 = new QLabel(tab_3);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(20, 400, 71, 16));
-        lineEdit = new QLineEdit(tab_3);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(20, 420, 71, 20));
-        lineEdit_2 = new QLineEdit(tab_3);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(120, 420, 321, 20));
-        pushButton_2 = new QPushButton(tab_3);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(460, 420, 75, 23));
+        tbxCID = new QLineEdit(tab_3);
+        tbxCID->setObjectName(QString::fromUtf8("tbxCID"));
+        tbxCID->setGeometry(QRect(20, 420, 71, 20));
+        tbxNComment = new QLineEdit(tab_3);
+        tbxNComment->setObjectName(QString::fromUtf8("tbxNComment"));
+        tbxNComment->setGeometry(QRect(120, 420, 321, 20));
+        btnComentar = new QPushButton(tab_3);
+        btnComentar->setObjectName(QString::fromUtf8("btnComentar"));
+        btnComentar->setGeometry(QRect(460, 420, 75, 23));
+        tbxComentarios = new QTextEdit(tab_3);
+        tbxComentarios->setObjectName(QString::fromUtf8("tbxComentarios"));
+        tbxComentarios->setGeometry(QRect(20, 310, 521, 71));
+        tbxComentarios->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
@@ -237,7 +242,7 @@ public:
 
         retranslateUi(Interfas);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Interfas);
@@ -250,7 +255,7 @@ public:
         btnOlikes->setText(QCoreApplication::translate("Interfas", "Likes", nullptr));
         label_10->setText(QCoreApplication::translate("Interfas", "Ordenar por:", nullptr));
         label_11->setText(QCoreApplication::translate("Interfas", "ID Publicacion", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Interfas", "Comentar", nullptr));
+        btnComentar->setText(QCoreApplication::translate("Interfas", "Comentar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Interfas", "Principal", nullptr));
         btnEnviar->setText(QCoreApplication::translate("Interfas", "Enviar", nullptr));
         label_5->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">ID</span></p></body></html>", nullptr));
