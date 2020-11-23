@@ -11,7 +11,8 @@ CONFIG += c++11
 SOURCES += \
     interfas.cpp \
     main.cpp \
-    redsocial.cpp
+    redsocial.cpp \
+    vizualizar.cpp
 
 HEADERS += \
     Coleccion.h \
@@ -29,12 +30,13 @@ HEADERS += \
     Tree.h \
     User.h \
     interfas.h \
-    redsocial.h
+    redsocial.h \
+    vizualizar.h
 
 FORMS += \
-    Vizualizar.ui \
     interfas.ui \
-    redsocial.ui
+    redsocial.ui \
+    vizualizar.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
