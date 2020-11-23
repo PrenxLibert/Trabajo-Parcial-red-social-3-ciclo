@@ -82,7 +82,8 @@ void Interfas::on_btnPublic_clicked()
     stringstream ss;
     string tmp;
     string twet=ui->tbxNPublic->text().toStdString();
-    Publicacion aux(1001,usuario->id,twet,usuario->name,usuario->date,0);
+    int id=publicaciones.getCant();
+    Publicacion aux(id+1,usuario->id,twet,usuario->name,usuario->date,0);
 
     ss << aux.id;
     tmp = ss.str();
@@ -91,6 +92,7 @@ void Interfas::on_btnPublic_clicked()
     ui->tbxPublic->append(QString::fromStdString(aux.name));
     ui->tbxPublic->append(QString::fromStdString(aux.twet));
     ui->tbxPublic->append(QString::fromStdString(aux.date));
+    publicaciones.push(aux);
     publicaciones.saved(aux);
 }
 
@@ -117,12 +119,15 @@ void Interfas::on_btnSearch_clicked()
         User aux("",ui->tbxSearch->text().toUInt(),""," ");
         amigo =usuarios->buscarI(aux.id,aux);
 
-        ui->tbxNameF->setText(QString::fromStdString(amigo->name));
-        ui->tbxMailF->setText(QString::fromStdString(amigo->mail));
-        ui->tbxIdF->setText(ui->tbxSearch->text());
-        ui->tbxDateF->setText(QString::fromStdString(amigo->date));
+        if(amigo!=nullptr){
 
-        cargaPublic();
+            ui->tbxNameF->setText(QString::fromStdString(amigo->name));
+            ui->tbxMailF->setText(QString::fromStdString(amigo->mail));
+            ui->tbxIdF->setText(ui->tbxSearch->text());
+            ui->tbxDateF->setText(QString::fromStdString(amigo->date));
+
+            cargaPublic();
+        }
     }
 
 }

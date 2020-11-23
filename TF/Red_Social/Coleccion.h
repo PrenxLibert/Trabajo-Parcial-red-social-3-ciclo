@@ -46,12 +46,12 @@ public:
 
     User* buscarN(User dato){
 
-        auto existenciaID=[](User a, User b){
+        auto existenciaN=[](User a, User b){
             if(a.name==b.name && a.mail==b.mail){return true;}
             else return false;
         };
 
-        return ID[dato.name].buscar(dato,existenciaID);
+        return Name[dato.name].buscar(dato,existenciaN);
     }
 
     size_t getCant(){
@@ -73,6 +73,8 @@ public:
             lectura.close();
     }
     void saved(User u){
+
+        u.id=cantidad;
         ofstream escritura("users.tsv",ios::app);
         escritura<<u.id<< '\t' + u.mail +'\t' +u.name+'\t'+u.date+'\n';
         escritura.close();

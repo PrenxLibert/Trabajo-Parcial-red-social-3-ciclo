@@ -31,7 +31,7 @@ bool RedSocial:: data(){
 
 bool RedSocial:: Ldata(){
     bool validador=false;
-    if(ui->tbxCID->text()!="")
+    if(ui->tbxCname->text()!="" && ui->tbxCMail->text()!="")
         validador=true;
     return validador;
 }
@@ -44,8 +44,8 @@ void RedSocial::Loged(User* u){
 
 void RedSocial::Login(User u){
 
-    if(usuarios.buscarI(u.id,u)!=nullptr){
-        User *us=usuarios.buscarI(u.id,u);
+    if(usuarios.buscarN(u)!=nullptr){
+        User *us=usuarios.buscarN(u);
         QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
         Loged(us);
 
@@ -57,7 +57,7 @@ void RedSocial::Login(User u){
 void RedSocial::on_btnReg_clicked()
 {
     if(data()){
-        User u(ui->tbxName->text().toStdString(),ui->tbxID->text().toULong(),ui->tbxMail->text().toStdString(),ui->tbxDate->text().toStdString());
+        User u(ui->tbxName->text().toStdString(),0,ui->tbxMail->text().toStdString(),ui->tbxDate->text().toStdString());
         usuarios.push(ui->tbxID->text().toStdString(),u);
 
         QMessageBox::information(this,tr("Registred"),tr("Usted se ha registrado correctamente"));
@@ -71,7 +71,7 @@ void RedSocial::on_btnReg_clicked()
 void RedSocial::on_btnLog_clicked()
 {
    if(Ldata()){
-       User u(" ",ui->tbxCID->text().toUInt(),""," ");
+       User u(ui->tbxCname->text().toStdString(),0,ui->tbxCMail->text().toStdString(),"");
        Login(u);
    }
 }
