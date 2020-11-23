@@ -44,6 +44,18 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
     followers.cargar();
 //#############################################################################
 
+    auto IDP = [](Comment m, Comment n) {return m.idPub > n.idPub; };
+
+    auto existenciaIdP=[](Comment a, Comment b){
+        if(a.idPub==b.idPub){return true;}
+        else return false;
+    };
+
+    comentarios= Comments(IDP,existenciaIdP);
+    comentarios.cargar();
+
+//##############################################################################
+
     ui->tbxName->setText(QString::fromStdString(usuario->name));
     ui->tbxMail->setText(QString::fromStdString(usuario->mail));
     ui->tbxID->setText(QString::number(usuario->id));
@@ -154,13 +166,20 @@ void Interfas::on_btnOlikes_clicked(){
     auto print=[=](Publicacion p){
         stringstream ss;
         string tmp;
+        stringstream ss1;
+        string tmp1;
+
         ss << p.pubdate;
         tmp = ss.str();
 
-        Interfas::ui->tbxPublic->append(QString::fromStdString(tmp));
+        ss1 << p.id;
+        tmp1 = ss1.str();
+
+        Interfas::ui->tbxPublic->append("ID"+QString::fromStdString(tmp1));
         Interfas::ui->tbxPublic->append(QString::fromStdString(p.name));
         Interfas::ui->tbxPublic->append(QString::fromStdString(p.twet));
         Interfas::ui->tbxPublic->append(QString::fromStdString(p.date));
+        Interfas::ui->tbxPublic->append("LIKES  " + QString::fromStdString(tmp));
         Interfas::ui->tbxPublic->append("");
         Interfas::ui->tbxPublic->append("");
 
@@ -192,13 +211,43 @@ void Interfas::on_btnMFollow_clicked()
     };
     followers.print(print,50);
 }
+
+void Interfas::CargaComments(){
+    int id=ui->tbxCID->text().toInt();
+
+    if(id>0){
+        auto print=[=](Comment c){
+
+            if(c.idPub==id){
+
+                Comment* c=new Comment(0,id,"","");
+                c=Interfas::comentarios.buscar(*c);
+                Interfas::ui->tbxComentarios->append(QString::fromStdString(c->text));
+                Interfas::ui->tbxComentarios->append("");
+                Interfas::ui->tbxComentarios->append("");
+            }
+
+        };
+        comentarios.print(print,50);
+    }
+}
+
 void Interfas::on_btnComentar_clicked()
 {
+    ui->tbxComentarios->setText("");
+    CargaComments();
+
     QString tmp;
+
     tmp=ui->tbxNComment->text();
-    ui->tbxComentarios->append(tmp);
+    Comment aux(0,0,usuario->date,tmp.toStdString());
+
+    ui->tbxComentarios->append(QString::fromStdString(aux.text));
     ui->tbxNComment->setText("");
 
+    comentarios.push(aux);
+
+    comentarios.saved(aux);
 }
 /*
         stringstream ss;

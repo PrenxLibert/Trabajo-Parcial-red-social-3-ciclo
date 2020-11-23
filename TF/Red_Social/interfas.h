@@ -7,6 +7,7 @@
 #include "Coleccion.h"
 #include "Publicaciones.h"
 #include "Followers.h"
+#include "Comments.h"
 
 namespace Ui {
 class Interfas;
@@ -21,6 +22,7 @@ public:
     ~Interfas();
 
     void cargaPublic();
+    void CargaComments();
 
 private slots:
 
@@ -49,6 +51,7 @@ private:
     Publicaciones publicacionesL;
     Followers followers;
     int cant;
+    Comments comentarios;
 };
 
 #endif // INTERFAS_H

@@ -19,6 +19,7 @@ public:
 
     void push(Comment dato){
         dato.id=cantidad+1;
+        dato.idPub=cantidad+1;
         coleccion.push(dato);
         cantidad++;
     }

@@ -31,9 +31,9 @@ public:
     }
 
     void cargar(){
-        string id,idU, twet,name,date,pubdate;
+        string task,id,idU, twet,name,date,pubdate;
             ifstream lectura("publications.tsv");
-            while (getline(lectura, id, '\t')) {
+            while (getline(lectura, task, '\t')) {
                       getline(lectura, id, '\t');
                       getline(lectura, idU, '\t');
                       getline(lectura, twet, '\t');
@@ -42,7 +42,7 @@ public:
                       getline(lectura, pubdate);
                       Publicacion p ( stoi(id), stoi(idU), twet, name, date,stoi(pubdate));
                       push(p);
-                      ++cantidad;
+                      //++cantidad;
 
 
             }
