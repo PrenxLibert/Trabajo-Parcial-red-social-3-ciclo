@@ -32,6 +32,10 @@ public:
         coleccion.EnOrden(_print,cant);
     }
 
+    size_t getCant(){
+        return cantidad;
+    }
+
     void cargar(){
         string ID,idPub,date,text;
         QString id,idpub;

@@ -30,6 +30,10 @@ public:
         return coleccion[tmp].buscar(dato,busqueda);
     }
 
+    size_t getCant(){
+        return cantidad;
+    }
+
     void cargar(){
         string id,email, name,date;
             ifstream lectura("users.tsv");

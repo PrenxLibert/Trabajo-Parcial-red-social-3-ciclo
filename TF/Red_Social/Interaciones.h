@@ -31,6 +31,10 @@ public:
         coleccion.EnOrden(_print,cant);
     }
 
+    size_t getCant(){
+        return cantidad;
+    }
+
     void cargar(){
         string idU,idPub, date, share;
             ifstream lectura("interaction.tsv");

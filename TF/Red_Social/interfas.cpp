@@ -23,7 +23,7 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
     publicacionesU.cargar();
 //###########################################################################
 
-    auto likes = [](Publicacion m, Publicacion n) {return m.pubdate > n.pubdate; };
+    auto likes = [](Publicacion m, Publicacion n) {return m.pubdate <= n.pubdate; };
 
     auto existenciaL=[](Publicacion a, Publicacion b){
         if(a.pubdate==b.pubdate){return true;}
@@ -175,7 +175,7 @@ void Interfas::on_btnOlikes_clicked(){
         ss1 << p.id;
         tmp1 = ss1.str();
 
-        Interfas::ui->tbxPublic->append("ID"+QString::fromStdString(tmp1));
+        Interfas::ui->tbxPublic->append("ID "+QString::fromStdString(tmp1));
         Interfas::ui->tbxPublic->append(QString::fromStdString(p.name));
         Interfas::ui->tbxPublic->append(QString::fromStdString(p.twet));
         Interfas::ui->tbxPublic->append(QString::fromStdString(p.date));
@@ -209,7 +209,8 @@ void Interfas::on_btnMFollow_clicked()
         }
 
     };
-    followers.print(print,50);
+    int cant=followers.getCant();
+    followers.print(print,cant);
 }
 
 void Interfas::CargaComments(){
@@ -228,7 +229,8 @@ void Interfas::CargaComments(){
             }
 
         };
-        comentarios.print(print,50);
+        int cant=comentarios.getCant();
+        comentarios.print(print,cant);
     }
 }
 

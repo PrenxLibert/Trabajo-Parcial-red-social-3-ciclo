@@ -32,15 +32,15 @@ private:
         }
     }
 
-    void _EnOrden(Nodo<T>*& aux,function<void(T)>print,int cant,int i){
+    void _EnOrden(Nodo<T>*& aux,function<void(T)>print,int cant,int *i){
         if (aux == nullptr)return;
         else {
-            //if(++i<5){
-             _EnOrden(aux->L,print,cant,i);
 
-             print(aux->val);
-             _EnOrden(aux->R,print,cant,i);
-           // }
+             if(*i<cant)_EnOrden(aux->L,print,cant,&*i);
+
+             if(*i<cant)print(aux->val);
+             *i=*i+1;
+             if(*i<cant)_EnOrden(aux->R,print,cant,&*i);
         }
     }
 
@@ -87,7 +87,7 @@ public:
 
         void EnOrden(function<void(T)>print,int cant) {
             int i=0;
-            _EnOrden(start,print,cant,i);
+            _EnOrden(start,print,cant,&i);
         }
 
         void PreOrden() {

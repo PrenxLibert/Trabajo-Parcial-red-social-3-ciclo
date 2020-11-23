@@ -31,7 +31,9 @@ public:
     void print(function<void(Follow)>_print,int cant){
         coleccion.EnOrden(_print,cant);
     }
-
+    size_t getCant(){
+        return cantidad;
+    }
     void cargar(){
         string idU,idF;
         QString idu,idf;
