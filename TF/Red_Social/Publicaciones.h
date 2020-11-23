@@ -5,29 +5,66 @@
 
 class Publicaciones{
 private:
-    Tree<Publicacion>coleccion;
+    Tree<Publicacion>Usuarios;
+    Tree<Publicacion>Likes;
+    Tree<Publicacion>ID;
+
     size_t cantidad;
-    function<bool(Publicacion, Publicacion)> busqueda;
 public:
-    Publicaciones(function<bool(Publicacion, Publicacion)> criterio,function<bool(Publicacion, Publicacion)> _busqueda){
-        coleccion=Tree<Publicacion>(criterio);
+    Publicaciones(){
+
+        auto IDU = [](Publicacion m, Publicacion n) {return m.idU > n.idU; };
+        auto likes = [](Publicacion m, Publicacion n) {return m.pubdate <= n.pubdate; };
+        auto id = [](Publicacion m, Publicacion n) {return m.id <= n.id; };
+
+        Usuarios=Tree<Publicacion>(IDU);
+        Likes=Tree<Publicacion>(likes);
+        ID=Tree<Publicacion>(id);
+
         cantidad=0;
-        busqueda=_busqueda;
     }
-    Publicaciones(){}
 
     void push(Publicacion dato){
         dato.id=cantidad+1;
-        coleccion.push(dato);
+        Usuarios.push(dato);
+        Likes.push(dato);
+        ID.push(dato);
         cantidad++;
     }
 
-    Publicacion* buscar(Publicacion dato){
-        return coleccion.buscar(dato,busqueda);
+    Publicacion* buscarU(Publicacion dato){
+        auto existenciaU=[](Publicacion a, Publicacion b){
+            if(a.idU==b.idU){return true;}
+            else return false;
+        };
+        return Usuarios.buscar(dato,existenciaU);
     }
 
-    void print(function<void(Publicacion)>_print,int cant){
-        coleccion.EnOrden(_print,cant);
+    Publicacion* buscarL(Publicacion dato){
+
+        auto existenciaL=[](Publicacion a, Publicacion b){
+            if(a.pubdate==b.pubdate){return true;}
+            else return false;
+        };
+        return Likes.buscar(dato,existenciaL);
+    }
+
+    Publicacion* buscarI(Publicacion dato){
+        auto existenciaI=[](Publicacion a, Publicacion b){
+            if(a.id==b.id){return true;}
+            else return false;
+        };
+        return ID.buscar(dato,existenciaI);
+    }
+
+    void printU(function<void(Publicacion)>_print,int cant){
+        Usuarios.EnOrden(_print,cant);
+    }
+    void printL(function<void(Publicacion)>_print,int cant){
+        Likes.EnOrden(_print,cant);
+    }
+    void printI(function<void(Publicacion)>_print,int cant){
+        ID.EnOrden(_print,cant);
     }
 
     size_t getCant(){

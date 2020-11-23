@@ -47,9 +47,7 @@ private:
     User *usuario;
     User *amigo;
     Coleccion* usuarios;
-    Publicaciones publicacionesU;
-    Publicaciones publicacionesL;
-    Publicaciones publicacionesI;
+    Publicaciones publicaciones;
     Followers followers;
     int cant;
 };

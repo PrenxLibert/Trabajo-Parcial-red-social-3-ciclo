@@ -12,41 +12,9 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
 
     usuario=u;
     this->usuarios=usuarios;
-//##########################################################################
-    auto IDU = [](Publicacion m, Publicacion n) {return m.idU > n.idU; };
 
-    auto existenciaU=[](Publicacion a, Publicacion b){
-        if(a.idU==b.idU){return true;}
-        else return false;
-    };
+    publicaciones.cargar();
 
-    publicacionesU = Publicaciones(IDU,existenciaU);
-    publicacionesU.cargar();
-//###########################################################################
-
-    auto likes = [](Publicacion m, Publicacion n) {return m.pubdate <= n.pubdate; };
-
-    auto existenciaL=[](Publicacion a, Publicacion b){
-        if(a.pubdate==b.pubdate){return true;}
-        else return false;
-    };
-
-    publicacionesL = Publicaciones(likes,existenciaL);
-    publicacionesL.cargar();
-
-//###########################################################################
-
-    auto ID = [](Publicacion m, Publicacion n) {return m.id <= n.id; };
-
-    auto existenciaI=[](Publicacion a, Publicacion b){
-        if(a.id==b.id){return true;}
-        else return false;
-    };
-
-    publicacionesI = Publicaciones(ID,existenciaI);
-    publicacionesI.cargar();
-
-//############################################################################
     auto IdU = [](Follow m, Follow n) {return m.idU > n.idU; };
 
     auto existenciaIdU=[](Follow a, Follow b){
@@ -56,7 +24,7 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
 
     followers= Followers(IdU,existenciaIdU);
     followers.cargar();
-//#############################################################################
+
 
     ui->tbxName->setText(QString::fromStdString(usuario->name));
     ui->tbxMail->setText(QString::fromStdString(usuario->mail));
@@ -65,7 +33,7 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
     cant=0;
 
     Publicacion auxp(usuario->id,usuario->id,"","","",usuario->id);
-    Publicacion* p=publicacionesU.buscar(auxp);
+    Publicacion* p=publicaciones.buscarU(auxp);
 
     ui->tbxMPublic->append(QString::fromStdString(p->name));
     ui->tbxMPublic->append(QString::fromStdString(p->twet));
@@ -123,7 +91,7 @@ void Interfas::on_btnPublic_clicked()
     ui->tbxPublic->append(QString::fromStdString(aux.name));
     ui->tbxPublic->append(QString::fromStdString(aux.twet));
     ui->tbxPublic->append(QString::fromStdString(aux.date));
-    publicacionesU.saved(aux);
+    publicaciones.saved(aux);
 }
 
 void Interfas::cargaPublic(){
@@ -131,7 +99,7 @@ void Interfas::cargaPublic(){
     string tmp;
 
     Publicacion auxp(0,amigo->id,"","","",0);
-    Publicacion* p=publicacionesU.buscar(auxp);
+    Publicacion* p=publicaciones.buscarU(auxp);
 
     ss << p->id;
     tmp = ss.str();
@@ -156,8 +124,6 @@ void Interfas::on_btnSearch_clicked()
 
         cargaPublic();
     }
-
-
 
 }
 
@@ -187,7 +153,7 @@ void Interfas::on_btnOlikes_clicked(){
 
     };
 
-    publicacionesL.print(print,50);
+    publicaciones.printL(print,50);
 
 }
 
@@ -220,7 +186,7 @@ void Interfas::on_btnComentar_clicked()
 
     if(ui->tbxCID->text()!=""){
         Publicacion auxp(ui->tbxCID->text().toInt(),0,"","","",0);
-        Publicacion* p=publicacionesI.buscar(auxp);
+        Publicacion* p=publicaciones.buscarI(auxp);
 
         ui->tbxCID->setText("");
 
