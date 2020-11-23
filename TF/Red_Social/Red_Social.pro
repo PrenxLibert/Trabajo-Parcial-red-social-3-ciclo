@@ -15,9 +15,11 @@ SOURCES += \
 
 HEADERS += \
     Coleccion.h \
+    Comment.h \
     Follow.h \
     Followers.h \
     HashTable.h \
+    Interaccion.h \
     Library.h \
     Message.h \
     Publicacion.h \
