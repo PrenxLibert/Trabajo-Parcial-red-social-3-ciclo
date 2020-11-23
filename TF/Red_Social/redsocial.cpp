@@ -7,13 +7,7 @@
 
 RedSocial::RedSocial(QWidget *parent): QMainWindow(parent), ui(new Ui::RedSocial){
     ui->setupUi(this);
-    auto nombre = [](User m, User n) {return m.id > n.id; };
 
-    auto criterio=[](User a, User b){
-        if(a.id==b.id){return true;}
-        else return false;
-    };
-    usuarios=Coleccion(nombre,criterio);
     usuarios.cargar();
 }
 
@@ -50,8 +44,8 @@ void RedSocial::Loged(User* u){
 
 void RedSocial::Login(User u){
 
-    if(usuarios.buscar(u.id,u)!=nullptr){
-        User *us=usuarios.buscar(u.id,u);
+    if(usuarios.buscarI(u.id,u)!=nullptr){
+        User *us=usuarios.buscarI(u.id,u);
         QMessageBox::information(this,tr("Loged"),tr("Usted se ha logueado correctamente"));
         Loged(us);
 

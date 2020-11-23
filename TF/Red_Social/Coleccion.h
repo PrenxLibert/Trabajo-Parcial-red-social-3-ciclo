@@ -7,27 +7,51 @@
 
 class Coleccion{
 private:
-    HashTable<User>coleccion;
+    HashTable<User>ID;
+    HashTable<User>Name;
     size_t cantidad;
-    function<bool(User, User)> busqueda;
 public:
-    Coleccion(function<bool(User, User)> criterio,function<bool(User, User)> _busqueda){
-        coleccion=HashTable<User>(criterio);
+    Coleccion(){
+        auto id = [](User m, User n) {return m.id > n.id; };
+        auto name = [](User m, User n) {return m.name > n.name; };
+
+        ID=HashTable<User>(id);
+        Name=HashTable<User>(name);
+
         cantidad=0;
-        busqueda=_busqueda;
+
     }
-    Coleccion(){}
 
     void push(string name,User dato){
-        coleccion[name].push(dato);
+        dato.id=cantidad+1;
+
+        ID[name].push(dato);
+        Name[dato.name].push(dato);
+
         cantidad++;
     }
 
-    User* buscar(int id,User dato){
+    User* buscarI(int id,User dato){
+
+        auto existenciaID=[](User a, User b){
+            if(a.id==b.id){return true;}
+            else return false;
+        };
+
         stringstream ss;
         ss << id;
         string tmp = ss.str();
-        return coleccion[tmp].buscar(dato,busqueda);
+        return ID[tmp].buscar(dato,existenciaID);
+    }
+
+    User* buscarN(User dato){
+
+        auto existenciaID=[](User a, User b){
+            if(a.name==b.name && a.mail==b.mail){return true;}
+            else return false;
+        };
+
+        return ID[dato.name].buscar(dato,existenciaID);
     }
 
     size_t getCant(){
