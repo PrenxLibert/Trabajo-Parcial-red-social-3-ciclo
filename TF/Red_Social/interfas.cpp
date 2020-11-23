@@ -240,7 +240,10 @@ void Interfas::on_btnComentar_clicked()
     QString tmp;
 
     tmp=ui->tbxNComment->text();
-    Comment aux(0,0,usuario->date,tmp.toStdString());
+    int IdPub=ui->tbxCID->text().toInt();
+    if(IdPub!=0){
+    Comment aux(0,IdPub,usuario->date,tmp.toStdString());
+
 
     ui->tbxComentarios->append(QString::fromStdString(aux.text));
     ui->tbxNComment->setText("");
@@ -248,6 +251,7 @@ void Interfas::on_btnComentar_clicked()
     comentarios.push(aux);
 
     comentarios.saved(aux);
+    }
 }
 /*
         stringstream ss;

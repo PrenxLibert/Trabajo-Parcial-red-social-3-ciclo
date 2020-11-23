@@ -51,8 +51,9 @@ public:
     }
     //
     void saved(Comment u){
+        ++cantidad;
         ofstream escritura("comment.tsv",ios::app);
-        escritura<<u.id<< '\t'<<u.idPub<<'\t' <<u.date<< '\t'<< u.text<<'\n';
+        escritura<<cantidad<< '\t'<<u.idPub<<'\t' <<u.date<< '\t'<< u.text<<'\n';
         escritura.close();
     }
 };
