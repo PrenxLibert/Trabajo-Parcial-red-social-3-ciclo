@@ -49,9 +49,9 @@ private:
     Coleccion* usuarios;
     Publicaciones publicacionesU;
     Publicaciones publicacionesL;
+    Publicaciones publicacionesI;
     Followers followers;
     int cant;
-    Comments comentarios;
 };
 
 #endif // INTERFAS_H
