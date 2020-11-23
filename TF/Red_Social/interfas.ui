@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
@@ -389,7 +389,7 @@
       <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnFollow">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -524,6 +524,34 @@
        <y>80</y>
        <width>511</width>
        <height>301</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Followers</string>
+    </attribute>
+    <widget class="QPushButton" name="btnMFollow">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Followers</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="tbxFollowers">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>521</width>
+       <height>391</height>
       </rect>
      </property>
     </widget>

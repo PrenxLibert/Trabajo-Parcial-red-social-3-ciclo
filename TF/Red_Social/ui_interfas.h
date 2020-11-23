@@ -55,7 +55,7 @@ public:
     QLineEdit *tbxIdF;
     QLineEdit *tbxDateF;
     QTextEdit *tbxPublicF;
-    QPushButton *pushButton;
+    QPushButton *btnFollow;
     QWidget *tab_7;
     QLabel *label;
     QLabel *label_2;
@@ -66,6 +66,9 @@ public:
     QLineEdit *tbxID;
     QLineEdit *tbxDate;
     QTextEdit *tbxMPublic;
+    QWidget *tab;
+    QPushButton *btnMFollow;
+    QTextEdit *tbxFollowers;
 
     void setupUi(QDialog *Interfas)
     {
@@ -180,13 +183,13 @@ public:
         tbxPublicF->setObjectName(QString::fromUtf8("tbxPublicF"));
         tbxPublicF->setGeometry(QRect(10, 120, 531, 271));
         tbxPublicF->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        pushButton = new QPushButton(tab_5);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(400, 70, 75, 23));
+        btnFollow = new QPushButton(tab_5);
+        btnFollow->setObjectName(QString::fromUtf8("btnFollow"));
+        btnFollow->setGeometry(QRect(400, 70, 75, 23));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Arial"));
         font1.setPointSize(12);
-        pushButton->setFont(font1);
+        btnFollow->setFont(font1);
         tabWidget->addTab(tab_5, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
@@ -222,10 +225,19 @@ public:
         tbxMPublic->setObjectName(QString::fromUtf8("tbxMPublic"));
         tbxMPublic->setGeometry(QRect(20, 80, 511, 301));
         tabWidget->addTab(tab_7, QString());
+        tab = new QWidget();
+        tab->setObjectName(QString::fromUtf8("tab"));
+        btnMFollow = new QPushButton(tab);
+        btnMFollow->setObjectName(QString::fromUtf8("btnMFollow"));
+        btnMFollow->setGeometry(QRect(10, 10, 75, 23));
+        tbxFollowers = new QTextEdit(tab);
+        tbxFollowers->setObjectName(QString::fromUtf8("tbxFollowers"));
+        tbxFollowers->setGeometry(QRect(10, 50, 521, 391));
+        tabWidget->addTab(tab, QString());
 
         retranslateUi(Interfas);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(Interfas);
@@ -250,13 +262,15 @@ public:
         label_7->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">ID</span></p></body></html>", nullptr));
         label_8->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Mail</span></p></body></html>", nullptr));
         label_9->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Date</span></p></body></html>", nullptr));
-        pushButton->setText(QCoreApplication::translate("Interfas", "Follow", nullptr));
+        btnFollow->setText(QCoreApplication::translate("Interfas", "Follow", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QCoreApplication::translate("Interfas", "Buscar Amigos", nullptr));
         label->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Nombre</span></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Mail</span></p></body></html>", nullptr));
         label_3->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">ID</span></p></body></html>", nullptr));
         label_4->setText(QCoreApplication::translate("Interfas", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Date</span></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QCoreApplication::translate("Interfas", "Perfil", nullptr));
+        btnMFollow->setText(QCoreApplication::translate("Interfas", "Followers", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("Interfas", "Followers", nullptr));
     } // retranslateUi
 
 };

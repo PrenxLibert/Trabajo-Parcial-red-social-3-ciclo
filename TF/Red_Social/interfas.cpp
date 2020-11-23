@@ -32,6 +32,17 @@ Interfas::Interfas(User*& u,Coleccion* usuarios,QWidget *parent) :
 
     publicacionesL = Publicaciones(likes,existenciaL);
     publicacionesL.cargar();
+//############################################################################
+    auto IdU = [](Follow m, Follow n) {return m.idU > n.idU; };
+
+    auto existenciaIdU=[](Follow a, Follow b){
+        if(a.idU==b.idU){return true;}
+        else return false;
+    };
+
+    followers= Followers(IdU,existenciaIdU);
+    followers.cargar();
+//#############################################################################
 
     ui->tbxName->setText(QString::fromStdString(usuario->name));
     ui->tbxMail->setText(QString::fromStdString(usuario->mail));
@@ -158,6 +169,32 @@ void Interfas::on_btnOlikes_clicked(){
     publicacionesL.print(print,50);
 
 }
+
+void Interfas::on_btnFollow_clicked()
+{
+    Follow aux(usuario->id,ui->tbxSearch->text().toInt());
+    followers.push(aux);
+    followers.saved(aux);
+}
+
+void Interfas::on_btnMFollow_clicked()
+{
+    auto print=[=](Follow f){
+
+        if(f.idF==Interfas::usuario->id){
+
+            User* u=new User("",f.idU,"","");
+            u=Interfas::usuarios->buscar(f.idU,*u);
+
+            Interfas::ui->tbxFollowers->append(QString::fromStdString(u->name));
+        }
+
+    };
+    followers.print(print,50);
+}
+
+/*
+}*/
 
 /*
         stringstream ss;

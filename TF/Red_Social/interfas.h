@@ -6,6 +6,7 @@
 #include "User.h"
 #include "Coleccion.h"
 #include "Publicaciones.h"
+#include "Followers.h"
 
 namespace Ui {
 class Interfas;
@@ -33,6 +34,10 @@ private slots:
 
     void on_btnOlikes_clicked();
 
+    void on_btnFollow_clicked();
+
+    void on_btnMFollow_clicked();
+
 private:
     Ui::Interfas *ui;
     User *usuario;
@@ -40,6 +45,7 @@ private:
     Coleccion* usuarios;
     Publicaciones publicacionesU;
     Publicaciones publicacionesL;
+    Followers followers;
     int cant;
 };
 
