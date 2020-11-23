@@ -42,6 +42,7 @@ public:
                       getline(lectura, pubdate);
                       Publicacion p ( stoi(id), stoi(idU), twet, name, date,stoi(pubdate));
                       push(p);
+                      ++cantidad;
 
 
             }
@@ -49,8 +50,9 @@ public:
     }
     //
     void saved(Publicacion u){
+        ++cantidad;
         ofstream escritura("publications.tsv",ios::app);
-        escritura<<1001<< '\t'<<1001<<'\t' <<u.idU<< '\t'<< u.twet +'\t'+u.name+'\t' +u.date<<'\t'<< u.pubdate<<'\n';
+        escritura<<cantidad<< '\t'<<cantidad<<'\t' <<u.idU<< '\t'<< u.twet +'\t'+u.name+'\t' +u.date<<'\t'<< u.pubdate<<'\n';
         escritura.close();
     }
 };

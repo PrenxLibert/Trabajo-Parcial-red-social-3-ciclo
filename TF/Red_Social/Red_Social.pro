@@ -20,6 +20,7 @@ HEADERS += \
     Followers.h \
     HashTable.h \
     Interaccion.h \
+    Interaciones.h \
     Library.h \
     Message.h \
     Publicacion.h \
