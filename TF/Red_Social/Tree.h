@@ -9,6 +9,7 @@ struct Nodo{
     T val;
     Nodo* R;
     Nodo* L;
+    size_t h;
 
     Nodo(T v):val(v){
         R=L=nullptr;
@@ -22,6 +23,55 @@ private:
     Nodo<T>* start;
     function<bool(T,T)>criterio;
 
+
+    void actualizaAltura(Nodo<T>* nodo) {
+            nodo->h = altura(nodo);
+        }
+
+        int altura(Nodo<T>* nodo) {
+            if (nodo != nullptr)
+                return 1 + max(altura(nodo->L), altura(nodo->R));
+        }
+
+        int contar(Nodo<T>* nodo) {
+            if (nodo == nullptr)
+                return 1 + contar(nodo->L) + contar(nodo->D);
+        }
+        void rotarDerecha(Nodo<T>*& nodo){
+            Nodo<T>* tmp;
+            tmp = nodo->L;
+            nodo->L = tmp->R;
+            actualizaAltura(nodo);
+            tmp->R = nodo;
+            //actualizo la referencia del padre
+            nodo = tmp;
+            actualizaAltura(nodo);
+        }
+
+        void rotarIzquierda(Nodo<T>*& nodo) {
+            Nodo<T>* tmp;
+            tmp = nodo->R;
+            nodo->R = tmp->L;
+            actualizaAltura(nodo);
+            tmp->L = nodo;
+            //actualizo la referencia del padre
+            nodo = tmp;
+            actualizaAltura(nodo);
+        }
+        void balancear(Nodo<T>*& nodo) {
+            int diff = altura(nodo->R) - altura(nodo->L);
+            if (diff > 1) {//pesado a la derecha
+                if (altura(nodo->R->R) < altura(nodo->R->L))
+                    rotarDerecha(nodo->R);
+                rotarIzquierda(nodo);
+            }
+            else if (diff < -1) {
+                if (altura(nodo->L->R) > altura(nodo->L->L))
+                    rotarIzquierda(nodo->L);
+                rotarDerecha(nodo);
+            }
+        }
+
     void _push(T e, Nodo<T>*& aux){
         if(aux==nullptr){
             aux=new Nodo<T>(e);
@@ -30,6 +80,8 @@ private:
         }else{
             _push(e,aux->R);
         }
+        balancear(aux);
+        actualizaAltura(aux);
     }
 
     void _EnOrden(Nodo<T>*& aux,function<void(T)>print,int cant,int *i){
