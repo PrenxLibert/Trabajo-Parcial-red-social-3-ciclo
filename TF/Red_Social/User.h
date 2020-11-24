@@ -6,7 +6,7 @@
 
 struct User{
     string name;
-    int id;
+    long id;
     string mail;
     string date;
     HashTable<User>contactos;

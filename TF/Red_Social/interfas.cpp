@@ -48,7 +48,7 @@ Interfas::~Interfas()
 void Interfas::on_btnVchat_clicked()
 {
      User aux("",ui->tbxIDF->text().toUInt(),""," ");
-     amigo =usuarios->buscarI(aux.id,aux);
+     amigo =usuarios->buscar(aux.id,aux);
 
      ui->lblNameF->setText(QString::fromStdString(amigo->name));
 
@@ -117,7 +117,7 @@ void Interfas::on_btnSearch_clicked()
     ui->tbxPublicF->setText("");
     if(ui->tbxSearch->text()!=""){
         User aux("",ui->tbxSearch->text().toUInt(),""," ");
-        amigo =usuarios->buscarI(aux.id,aux);
+        amigo =usuarios->buscar(aux.id,aux);
 
         if(amigo!=nullptr){
 
@@ -176,7 +176,7 @@ void Interfas::on_btnMFollow_clicked()
         if(f.idF==Interfas::usuario->id){
 
             User* u=new User("",f.idU,"","");
-            u=Interfas::usuarios->buscarI(f.idU,*u);
+            u=Interfas::usuarios->buscar(f.idU,*u);
 
             Interfas::ui->tbxFollowers->append(QString::fromStdString(u->name));
         }

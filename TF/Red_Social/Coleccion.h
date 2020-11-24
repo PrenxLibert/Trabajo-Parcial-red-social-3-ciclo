@@ -7,51 +7,30 @@
 
 class Coleccion{
 private:
-    HashTable<User>ID;
-    HashTable<User>Name;
+    HashTable<User>coleccion;
     size_t cantidad;
+    function<bool(User, User)> busqueda;
 public:
-    Coleccion(){
-        auto id = [](User m, User n) {return m.id > n.id; };
-        auto name = [](User m, User n) {return m.name > n.name; };
-
-        ID=HashTable<User>(id);
-        Name=HashTable<User>(name);
-
+    Coleccion(function<bool(User, User)> criterio,function<bool(User, User)> _busqueda){
+        coleccion=HashTable<User>(criterio);
+        busqueda=_busqueda;
         cantidad=0;
 
     }
+    Coleccion(){}
 
     void push(string name,User dato){
-        dato.id=cantidad+1;
-
-        ID[name].push(dato);
-        Name[dato.name].push(dato);
+       coleccion[name].push(dato);
 
         cantidad++;
     }
 
-    User* buscarI(int id,User dato){
-
-        auto existenciaID=[](User a, User b){
-            if(a.id==b.id){return true;}
-            else return false;
-        };
+    User* buscar(int id,User dato){
 
         stringstream ss;
         ss << id;
         string tmp = ss.str();
-        return ID[tmp].buscar(dato,existenciaID);
-    }
-
-    User* buscarN(User dato){
-
-        auto existenciaN=[](User a, User b){
-            if(a.name==b.name && a.mail==b.mail){return true;}
-            else return false;
-        };
-
-        return Name[dato.name].buscar(dato,existenciaN);
+        return coleccion[tmp].buscar(dato,busqueda);
     }
 
     size_t getCant(){
@@ -72,11 +51,12 @@ public:
             }
             lectura.close();
     }
+
     void saved(User u){
 
         u.id=cantidad;
         ofstream escritura("users.tsv",ios::app);
-        escritura<<u.id<< '\t' + u.mail +'\t' +u.name+'\t'+u.date+'\n';
+        escritura<<u.id<< '\t' << u.mail <<'\t' <<u.name<<'\t'<<u.date+'\n';
         escritura.close();
     }
 };

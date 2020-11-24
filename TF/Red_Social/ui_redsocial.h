@@ -41,10 +41,8 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_10;
-    QLineEdit *tbxCname;
+    QLineEdit *tbxCID;
     QPushButton *btnLog;
-    QLabel *label_3;
-    QLineEdit *tbxCMail;
     QMenuBar *menubar;
     QMenu *menuRedSocial;
     QStatusBar *statusbar;
@@ -95,18 +93,12 @@ public:
         label_10 = new QLabel(centralwidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(300, 60, 81, 21));
-        tbxCname = new QLineEdit(centralwidget);
-        tbxCname->setObjectName(QString::fromUtf8("tbxCname"));
-        tbxCname->setGeometry(QRect(390, 60, 121, 20));
+        tbxCID = new QLineEdit(centralwidget);
+        tbxCID->setObjectName(QString::fromUtf8("tbxCID"));
+        tbxCID->setGeometry(QRect(390, 60, 121, 20));
         btnLog = new QPushButton(centralwidget);
         btnLog->setObjectName(QString::fromUtf8("btnLog"));
-        btnLog->setGeometry(QRect(410, 150, 75, 23));
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(330, 90, 41, 21));
-        tbxCMail = new QLineEdit(centralwidget);
-        tbxCMail->setObjectName(QString::fromUtf8("tbxCMail"));
-        tbxCMail->setGeometry(QRect(390, 90, 121, 20));
+        btnLog->setGeometry(QRect(410, 90, 75, 23));
         RedSocial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(RedSocial);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -136,9 +128,8 @@ public:
         btnReg->setText(QCoreApplication::translate("RedSocial", "Register", nullptr));
         label_7->setText(QCoreApplication::translate("RedSocial", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600; font-style:italic;\">Register</span></p></body></html>", nullptr));
         label_8->setText(QCoreApplication::translate("RedSocial", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600; font-style:italic;\">Login</span></p></body></html>", nullptr));
-        label_10->setText(QCoreApplication::translate("RedSocial", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Name</span></p></body></html>", nullptr));
+        label_10->setText(QCoreApplication::translate("RedSocial", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">ID</span></p></body></html>", nullptr));
         btnLog->setText(QCoreApplication::translate("RedSocial", "Login", nullptr));
-        label_3->setText(QCoreApplication::translate("RedSocial", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mail</span></p></body></html>", nullptr));
         menuRedSocial->setTitle(QCoreApplication::translate("RedSocial", "RedSocial", nullptr));
     } // retranslateUi
 
